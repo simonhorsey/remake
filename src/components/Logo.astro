@@ -1,13 +1,18 @@
 ---
-// The Essentials For Learning logo. `light` uses the full-colour version for
-// pale backgrounds; the default is the white version for the dark header and footer.
-const { href = '/', light = false } = Astro.props;
+const { href = '/' } = Astro.props;
 ---
-<a class="logo" href={href} aria-label="Essentials For Learning home">
-  <img src={light ? '/brand/logo.svg' : '/brand/logo-white.svg'} alt="Essentials For Learning" width="196" height="60" />
+<a class="logo" href={href} aria-label="LearningForSuccess home">
+  <svg class="logo__mark" viewBox="0 0 40 40" width="36" height="36" aria-hidden="true">
+    <rect width="40" height="40" rx="10" fill="#f57e2c" />
+    <path d="M8 30h7v-6h7v-6h7v-6h4" fill="none" stroke="#002442" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
+    <circle cx="33" cy="12" r="2.6" fill="#002442" />
+  </svg>
+  <span class="logo__text">Learning<b>ForSuccess</b></span>
 </a>
 <style>
-  .logo { display: inline-flex; align-items: center; text-decoration: none; padding-block: 6px; }
-  .logo img { height: 60px; width: auto; }
-  @media (max-width: 420px) { .logo img { height: 48px; } }
+  .logo { display: inline-flex; align-items: center; gap: 0.6rem; text-decoration: none; color: inherit; }
+  .logo__mark { flex: none; }
+  .logo__text { font-family: var(--font-logo); font-size: 1.2rem; font-weight: 400; letter-spacing: -0.01em; white-space: nowrap; }
+  .logo__text b { font-weight: 800; }
+  @media (max-width: 380px) { .logo__text { font-size: 1.05rem; } }
 </style>

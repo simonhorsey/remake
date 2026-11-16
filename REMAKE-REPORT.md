@@ -4,7 +4,7 @@
 
 - Reference pattern: https://www.storybrand.com (home page), read 2026-11-16
 - Built site: 10 pages for https://www.learning-for-success.com
-- Generated: 2026-11-16 23:33 UTC by `npm run report`
+- Generated: 2026-11-16 23:39 UTC by `npm run report`
 
 This report is written by `scripts/remake-report.cjs`, which loads every built page in a real browser. The verdict covers the build. Content still waiting on the site owner is listed at the end and does not affect it.
 
@@ -92,7 +92,7 @@ This report is written by `scripts/remake-report.cjs`, which loads every built p
 
 | | Check | Detail |
 |---|---|---|
-| ✅ | Home page under 400 KB in total | 112 KB over 6 requests (fonts 28 KB, CSS 27 KB) |
+| ✅ | Home page under 400 KB in total | 136 KB over 6 requests (fonts 62 KB, CSS 32 KB) |
 | ✅ | Under 20 KB of JavaScript files | 0 KB |
 
 ## J · No errors

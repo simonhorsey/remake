@@ -6,38 +6,38 @@
 <meta name="author" content="Simon Horsey" />
 <meta name="description" content="A free guide from LearningForSuccess: five study techniques that make your brain do the work." />
 <style>
-  @font-face { font-family: 'Roboto'; src: url('../node_modules/@fontsource-variable/roboto/files/roboto-latin-wght-normal.woff2') format('woff2'); font-weight: 100 900; font-style: normal; }
-  @font-face { font-family: 'Roboto'; src: url('../node_modules/@fontsource-variable/roboto/files/roboto-latin-wght-italic.woff2') format('woff2'); font-weight: 100 900; font-style: italic; }
+  @font-face { font-family: 'Source Sans 3'; src: url('../node_modules/@fontsource-variable/source-sans-3/files/source-sans-3-latin-wght-normal.woff2') format('woff2'); font-weight: 200 900; font-style: normal; }
+  @font-face { font-family: 'Source Sans 3'; src: url('../node_modules/@fontsource-variable/source-sans-3/files/source-sans-3-latin-wght-italic.woff2') format('woff2'); font-weight: 200 900; font-style: italic; }
   @font-face { font-family: 'Roboto Slab'; src: url('../node_modules/@fontsource-variable/roboto-slab/files/roboto-slab-latin-wght-normal.woff2') format('woff2'); font-weight: 100 900; }
 
-  :root { --ink: #0d1b2a; --ink-2: #14273d; --ink-3: #1e3653; --paper: #fbf8f2; --paper-2: #f3ede2; --line: #e4dccd; --text: #1a2330; --muted: #566273; --accent: #ffb703; --teal: #16746a; --teal-soft: #d9efe9; --on-ink: #f6f1e7; --on-ink-muted: #a9b6c7; }
+  :root { --ink: #002442; --ink-2: #01305a; --ink-3: #0b4877; --paper: #f7f9fc; --paper-2: #eaf1f8; --line: #d6e0ea; --text: #2b2f33; --muted: #515151; --accent: #f57e2c; --teal: #005499; --teal-soft: #dbe8f3; --on-ink: #ffffff; --on-ink-muted: #b9cee2; }
   @page { size: A4; margin: 0; }
   * { box-sizing: border-box; }
   html, body { margin: 0; padding: 0; }
-  body { font-family: 'Roboto', 'Helvetica Neue', Helvetica, sans-serif; color: var(--text); font-size: 11.5pt; line-height: 1.55; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-  h1, h2, h3 { font-family: 'Roboto Slab', Georgia, serif; font-weight: 700; line-height: 1.12; letter-spacing: -0.01em; margin: 0; }
+  body { font-family: 'Source Sans 3', 'Helvetica Neue', Helvetica, sans-serif; color: var(--text); font-size: 12pt; line-height: 1.5; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  h1, h2, h3 { font-family: 'Source Sans 3', 'Helvetica Neue', Helvetica, sans-serif; font-weight: 700; line-height: 1.1; letter-spacing: -0.02em; margin: 0; }
   p { margin: 0 0 3.2mm; }
   strong { font-weight: 700; }
 
   .page { width: 210mm; height: 297mm; padding: 22mm 22mm 24mm; position: relative; overflow: hidden; page-break-after: always; background: var(--paper); }
   .page:last-child { page-break-after: auto; }
   .footer { position: absolute; left: 22mm; right: 22mm; bottom: 11mm; display: flex; justify-content: space-between; font-size: 8.5pt; color: var(--muted); border-top: 0.3mm solid var(--line); padding-top: 3mm; }
-  .footer b { font-family: 'Roboto Slab', serif; color: var(--text); }
+  .footer b { color: var(--text); }
   .eyebrow { font-size: 8.5pt; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--teal); margin-bottom: 4mm; }
 
   /* Cover */
   .cover { background: var(--ink); color: var(--on-ink); padding: 24mm 22mm; display: flex; flex-direction: column; }
-  .cover::before { content: ''; position: absolute; inset: 0; background: radial-gradient(160mm 110mm at 85% 12%, rgba(31, 138, 125, 0.32), transparent 62%), radial-gradient(120mm 90mm at 0% 100%, rgba(255, 183, 3, 0.12), transparent 60%); }
+  .cover::before { content: ''; position: absolute; inset: 0; background: radial-gradient(160mm 110mm at 85% 12%, rgba(0, 84, 153, 0.7), transparent 62%), radial-gradient(120mm 90mm at 0% 100%, rgba(245, 126, 44, 0.16), transparent 60%); }
   .cover > * { position: relative; }
   .brand { display: flex; align-items: center; gap: 3.5mm; font-family: 'Roboto Slab', serif; font-size: 15pt; }
   .brand b { font-weight: 800; }
   .cover .eyebrow { color: var(--accent); margin-top: 38mm; }
   .cover h1 { font-size: 58pt; letter-spacing: -0.02em; }
-  .cover .sub { font-family: 'Roboto Slab', serif; font-size: 23pt; line-height: 1.2; margin-top: 7mm; max-width: 135mm; color: var(--on-ink); font-weight: 400; }
+  .cover .sub { font-size: 23pt; line-height: 1.2; margin-top: 7mm; max-width: 135mm; color: var(--on-ink); font-weight: 400; }
   .cover .sub em { font-style: normal; color: var(--accent); font-weight: 700; }
   .cover svg.steps { position: absolute; right: -8mm; bottom: 34mm; width: 120mm; opacity: 0.95; }
   .cover .by { margin-top: auto; font-size: 11pt; color: var(--on-ink-muted); }
-  .cover .by b { color: var(--on-ink); display: block; font-size: 13pt; font-family: 'Roboto Slab', serif; }
+  .cover .by b { color: var(--on-ink); display: block; font-size: 13pt; }
 
   /* Intro */
   .intro h2 { font-size: 27pt; max-width: 150mm; margin-bottom: 8mm; }
@@ -47,22 +47,22 @@
   .callout h3 { font-size: 15pt; margin-bottom: 2.5mm; color: var(--accent); }
   .callout p { margin: 0; color: var(--on-ink); }
   .list5 { margin: 7mm 0 0; padding: 0; list-style: none; display: grid; gap: 2.4mm; }
-  .list5 li { display: flex; gap: 4mm; align-items: baseline; padding-bottom: 2.4mm; border-bottom: 0.3mm solid var(--line); font-family: 'Roboto Slab', serif; font-weight: 700; font-size: 12.5pt; }
+  .list5 li { display: flex; gap: 4mm; align-items: baseline; padding-bottom: 2.4mm; border-bottom: 0.3mm solid var(--line); font-weight: 700; font-size: 12.5pt; }
   .list5 li span { color: var(--teal); font-variant-numeric: tabular-nums; }
 
   /* Technique pages */
-  .tech .num { font-family: 'Roboto Slab', serif; font-weight: 800; font-size: 76pt; line-height: 0.9; color: var(--accent); -webkit-text-stroke: 0; }
+  .tech .num { font-weight: 800; font-size: 80pt; line-height: 0.86; color: var(--teal); letter-spacing: -0.04em; -webkit-text-stroke: 0; }
   .tech .head { display: grid; grid-template-columns: auto 1fr; gap: 8mm; align-items: end; margin-bottom: 9mm; padding-bottom: 7mm; border-bottom: 0.6mm solid var(--ink); }
   .tech h2 { font-size: 29pt; }
   .tech .tag { font-size: 8.5pt; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--teal); margin-bottom: 2.5mm; }
   .block { margin-bottom: 7mm; }
-  .block h3 { font-size: 10pt; font-family: 'Roboto', sans-serif; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 2.2mm; }
+  .block h3 { font-size: 10pt; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 2.2mm; }
   .steps-list { margin: 0; padding: 0; list-style: none; counter-reset: s; display: grid; gap: 3mm; }
   .steps-list li { counter-increment: s; display: grid; grid-template-columns: 9mm 1fr; gap: 3.5mm; align-items: start; }
-  .steps-list li::before { content: counter(s); width: 8mm; height: 8mm; border-radius: 50%; background: var(--ink); color: var(--on-ink); font-family: 'Roboto Slab', serif; font-weight: 700; font-size: 10pt; display: grid; place-items: center; margin-top: 0.4mm; }
-  .steps-list b { font-family: 'Roboto Slab', serif; }
+  .steps-list li::before { content: counter(s); width: 8mm; height: 8mm; border-radius: 50%; background: var(--ink); color: var(--on-ink); font-weight: 700; font-size: 10pt; display: grid; place-items: center; margin-top: 0.4mm; }
+  .steps-list b { }
   .tonight { background: var(--teal-soft); border-radius: 4mm; padding: 6.5mm 8mm; display: grid; grid-template-columns: auto 1fr; gap: 5mm; align-items: center; position: absolute; left: 22mm; right: 22mm; bottom: 27mm; }
-  .tonight .badge { font-family: 'Roboto Slab', serif; font-weight: 800; font-size: 11pt; background: var(--teal); color: #fff; border-radius: 99mm; padding: 2mm 5mm; white-space: nowrap; }
+  .tonight .badge { font-weight: 800; font-size: 11pt; background: var(--teal); color: #fff; border-radius: 99mm; padding: 2mm 5mm; white-space: nowrap; }
   .tonight p { margin: 0; font-weight: 500; }
   .why { border-left: 1.2mm solid var(--accent); padding-left: 5mm; }
 
@@ -85,7 +85,7 @@
   .back .author { margin-top: 12mm; padding-top: 8mm; border-top: 0.3mm solid var(--ink-3); max-width: 140mm; }
   .back .author h3 { font-size: 13pt; margin-bottom: 2.5mm; }
   .back .author p { color: var(--on-ink-muted); font-size: 10.5pt; }
-  .rule { font-family: 'Roboto Slab', serif; font-weight: 700; font-size: 17pt; line-height: 1.25; margin: 8mm 0 0; padding: 6mm 0; border-top: 0.6mm solid var(--ink); border-bottom: 0.6mm solid var(--ink); }
+  .rule { font-weight: 700; font-size: 17pt; line-height: 1.25; margin: 8mm 0 0; padding: 6mm 0; border-top: 0.6mm solid var(--ink); border-bottom: 0.6mm solid var(--ink); }
   .rule span { color: var(--teal); }
 </style>
 </head>
@@ -94,17 +94,17 @@
 <!-- 1 · Cover -->
 <section class="page cover">
   <div class="brand">
-    <svg viewBox="0 0 40 40" width="38" height="38"><rect width="40" height="40" rx="10" fill="#ffb703"/><path d="M8 30h7v-6h7v-6h7v-6h4" fill="none" stroke="#0d1b2a" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="33" cy="12" r="2.6" fill="#0d1b2a"/></svg>
+    <svg viewBox="0 0 40 40" width="38" height="38"><rect width="40" height="40" rx="10" fill="#f57e2c"/><path d="M8 30h7v-6h7v-6h7v-6h4" fill="none" stroke="#002442" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="33" cy="12" r="2.6" fill="#002442"/></svg>
     <span>Learning<b>ForSuccess</b></span>
   </div>
   <p class="eyebrow">A free guide</p>
   <h1>Quick Wins</h1>
   <p class="sub">Five study techniques <em>AI can’t do for you</em></p>
   <svg class="steps" viewBox="0 0 520 400" aria-hidden="true">
-    <path d="M40 360h110v-80h110v-80h110v-80h110V360z" fill="#ffb703" opacity="0.1"/>
-    <path d="M40 360h110v-80h110v-80h110v-80h110" fill="none" stroke="#ffb703" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
-    <g fill="#f6f1e7"><circle cx="95" cy="360" r="8"/><circle cx="205" cy="280" r="8"/><circle cx="315" cy="200" r="8"/></g>
-    <circle cx="480" cy="120" r="18" fill="#ffb703"/>
+    <path d="M40 360h110v-80h110v-80h110v-80h110V360z" fill="#f57e2c" opacity="0.1"/>
+    <path d="M40 360h110v-80h110v-80h110v-80h110" fill="none" stroke="#f57e2c" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+    <g fill="#ffffff"><circle cx="95" cy="360" r="8"/><circle cx="205" cy="280" r="8"/><circle cx="315" cy="200" r="8"/></g>
+    <circle cx="480" cy="120" r="18" fill="#f57e2c"/>
   </svg>
   <p class="by"><b>Simon Horsey</b>Teacher and author of <i>Practice Makes Perfect</i></p>
 </section>
@@ -309,7 +309,7 @@
     <h3>About Simon</h3>
     <p>Simon Horsey is a teacher and Head of Arts and Technology at a British international school. He is the author of <i>Practice Makes Perfect: The Keys to Success on Any Musical Instrument</i>, a book about how to practise well. Essentials for Learning brings that same thinking to every subject.</p>
   </div>
-  <p class="by" style="font-family: 'Roboto Slab', serif; font-weight: 700; font-size: 14pt; color: var(--on-ink)">www.learning-for-success.com</p>
+  <p class="by" style="font-weight: 700; font-size: 14pt; color: var(--on-ink)">www.learning-for-success.com</p>
 </section>
 
 </body>

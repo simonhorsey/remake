@@ -1,5 +1,5 @@
 :root {
-  /* Essentials For Learning brand: Standing Waters blue, Summer Citrus orange, Briquette Grey. */
+  /* Colours from the Essentials For Learning brand guide: Standing Waters blue, Summer Citrus orange, Briquette Grey. */
   --brand-blue: #005499;
   --brand-orange: #f57e2c;
   --brand-grey: #515151;
@@ -22,6 +22,7 @@
   --teal-soft: #dbe8f3;
 
   --font-display: 'Source Sans 3 Variable', 'Source Sans 3', 'Helvetica Neue', Helvetica, system-ui, sans-serif;
+  --font-logo: 'Roboto Slab Variable', 'Roboto Slab', Georgia, serif; /* wordmark only */
   --font-body: 'Source Sans 3 Variable', 'Source Sans 3', 'Helvetica Neue', Helvetica, system-ui, sans-serif;
 
   --wrap: 1160px;
@@ -36,7 +37,7 @@
 *::before,
 *::after { box-sizing: border-box; }
 
-html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: 100px; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: 88px; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
