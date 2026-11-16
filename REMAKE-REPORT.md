@@ -4,7 +4,7 @@
 
 - Reference pattern: https://www.storybrand.com (home page), read 2026-11-16
 - Built site: 10 pages for https://www.learning-for-success.com
-- Generated: 2026-11-16 06:59 UTC by `npm run report`
+- Generated: 2026-11-16 07:30 UTC by `npm run report`
 
 This report is written by `scripts/remake-report.cjs`, which loads every built page in a real browser. The verdict covers the build. Content still waiting on the site owner is listed at the end and does not affect it.
 
@@ -17,7 +17,7 @@ This report is written by `scripts/remake-report.cjs`, which loads every built p
 | ✅ | Header: three or more dropdown groups, every link has a descriptor | Courses (2), For Schools (1), Resources (3) |
 | ✅ | Hero: dark, eyebrow, one H1, problem line, solution line |  |
 | ✅ | Hero: primary button jumps to the paths | /#paths |
-| ✅ | Trust strip sits inside the hero with a label and 3+ names | 4 names |
+| ✅ | Trust strip sits inside the hero with a label and 3+ names | 7 names |
 | ✅ | Paths: exactly three cards, each with audience, name, text, price line and button |  |
 | ✅ | Paths: one-line aside for visitors who fit none of the three |  |
 | ✅ | Plan: dark section, H2, exactly three steps, button repeated |  |
@@ -100,11 +100,10 @@ This report is written by `scripts/remake-report.cjs`, which loads every built p
 |---|---|---|
 | ✅ | No browser console errors on any page |  |
 
-## Waiting on the site owner (19)
+## Waiting on the site owner (17)
 
 Each of these shows a red "Draft" tag on the page. They are blanks, not invented content. Fill them in `src/content/site.js`.
 
-- Confirm qualifications — /
 - Price to confirm — /, /exam-revision/, /gradeboost/
 - Sign-up form not connected to an email provider yet. — /, /free-guide/
 - Student testimonial to add — /
@@ -116,10 +115,9 @@ Each of these shows a red "Draft" tag on the page. They are blanks, not invented
 - Contact form not connected yet — add an endpoint in src/content/site.js. — /contact/
 - Contact email to add — /contact/
 - Checkout not connected yet, so this button goes to the contact page. — /exam-revision/, /gradeboost/
-- Draft unit list — replace with the real Revision Course units. — /exam-revision/
+- These come from your slides — confirm each one is still part of the course. — /exam-revision/, /gradeboost/
 - Answer to add — /exam-revision/, /gradeboost/
-- Confirm the free guide exists (title, PDF) and connect the sign-up form to your email provider. — /free-guide/
-- Draft unit list — replace with the real GradeBoost units. — /gradeboost/
+- The slides show no free guide yet. Confirm you want one (title, PDF) and connect the sign-up form to your email provider. — /free-guide/
 - Privacy Policy text to be supplied before launch. This page is a holder so the footer link works. — /privacy/
 - Draft offer — confirm what the schools package includes. — /schools/
 - Terms of Use text to be supplied before launch. This page is a holder so the footer link works. — /terms/

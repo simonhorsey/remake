@@ -51,6 +51,15 @@ const visibleFaqs = faqs.filter((f) => f.a || site.draft);
         </li>
       ))}
     </ul>
+    {offer.includes && (
+      <div class="offer__includes card">
+        <h3>What Is Included</h3>
+        <ul class="ticks">
+          {offer.includes.map((i) => <li>{i}</li>)}
+        </ul>
+        {offer.includesReview && <Draft note label={offer.includesReview} />}
+      </div>
+    )}
   </div>
 </section>
 
@@ -105,6 +114,8 @@ const visibleFaqs = faqs.filter((f) => f.a || site.draft);
   .offer__head { margin-bottom: clamp(28px, 4vw, 48px); }
   .offer__item p { color: var(--muted); margin: 0; }
   .offer__num { display: block; font-family: var(--font-display); font-weight: 800; color: var(--teal); margin-bottom: 0.6rem; }
+  .offer__includes { margin-top: clamp(16px, 2.4vw, 28px); }
+  .offer__includes .ticks { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 0 2rem; }
   .offer__link { color: var(--teal); font-weight: 700; }
   .offer__closing { max-width: 20ch; margin-inline: auto; margin-bottom: 1.5rem; }
   ul.card.ticks li:last-child { margin-bottom: 0; }

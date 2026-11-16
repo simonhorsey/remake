@@ -32,8 +32,8 @@ export const nav = [
   {
     label: 'Courses',
     items: [
-      { label: 'GradeBoost', note: 'Study skills for better grades all year', href: '/gradeboost/' },
-      { label: 'Exam Revision', note: 'A clear plan for the weeks before exams', href: '/exam-revision/' },
+      { label: 'GradeBoost', note: 'The full study skills course, one unit a week', href: '/gradeboost/' },
+      { label: 'ExamX Revision', note: 'A clear plan for the run-up to exams', href: '/exam-revision/' },
     ],
   },
   {
@@ -59,17 +59,16 @@ export const hero = {
   eyebrow: 'Essentials for Learning',
   heading: 'Learn How to Learn. Then Watch Your Grades Follow.',
   problem:
-    'Nobody teaches you how to study. So you reread, highlight and hope — and your grades never quite match the hours you put in.',
+    'Reading the chapter again and highlighting half the page feels like revision. It is not — and that is why your grades never quite match the hours you put in.',
   solution:
-    'LearningForSuccess courses give you a simple, repeatable way to study and revise, so your effort finally shows up in your results.',
+    'Our courses teach you the techniques that work, from active recall to a revision plan you will stick to. Your results improve and, over time, you end up doing less work.',
   secondaryCta: { label: 'Get the Free Guide', href: '/free-guide/' },
 };
 
-// Trust strip under the hero. Text only — no logos we have no right to use.
+// Strip under the hero: the techniques the courses teach.
 export const trust = {
-  label: 'Built for students working towards',
-  items: ['GCSE', 'IGCSE', 'A Level', 'IB Diploma'],
-  needsReview: 'Confirm which qualifications the courses are aimed at.',
+  label: 'Techniques you will learn',
+  items: ['Active recall', 'Cornell notes', 'SQ3R', 'Mind maps', 'Memory systems', 'Pomodoro', 'Time boxing'],
 };
 
 // ── Home: the three paths ───────────────────────────────────────────────────
@@ -81,7 +80,7 @@ export const paths = {
       slug: 'gradeboost',
       audience: 'For students who want better grades all year',
       title: 'GradeBoost',
-      text: 'The study skills school never quite gets round to teaching. Learn how to organise your work, make it stick and stop leaving marks behind.',
+      text: 'Seven units that take you from note-taking to memory to beating procrastination. Take one a week and build habits that last through school and beyond.',
       price: null, // e.g. '£49'
       priceLabel: 'Course fee',
       cta: 'Explore GradeBoost',
@@ -91,11 +90,11 @@ export const paths = {
     {
       slug: 'exam-revision',
       audience: 'For students with exams on the way',
-      title: 'Exam Revision Course',
-      text: 'Rate your confidence topic by topic, build a revision timetable around what needs the most work, and walk into the exam hall prepared.',
+      title: 'ExamX Revision',
+      text: 'Work out which subjects need you most, build a revision plan that survives real life, and use the quick-win techniques that make knowledge stick.',
       price: null,
       priceLabel: 'Course fee',
-      cta: 'Explore Exam Revision',
+      cta: 'Explore ExamX Revision',
       short: 'Turn the weeks before your exams into a plan you can follow.',
       href: '/exam-revision/',
     },
@@ -120,15 +119,15 @@ export const plan = {
   steps: [
     {
       title: 'Choose Your Course',
-      text: 'Pick GradeBoost for year-round study skills, or the Exam Revision Course when exams are getting close.',
+      text: 'Pick GradeBoost to build study skills for the long run, or ExamX Revision when exams are getting close.',
     },
     {
       title: 'Learn the Method',
-      text: 'Work through short, practical lessons and handouts that show you exactly what to do each time you sit down to study.',
+      text: 'Watch a short video lesson, then try the technique straight away on your own work. Every unit ends with something to do, not just something to know.',
     },
     {
       title: 'Watch Your Grades Follow',
-      text: 'Use the method in every subject. When you know how to learn, the effort you put in starts to show in your results.',
+      text: 'Keep using the techniques in every subject. Results improve and, because your technique is good, the work gets lighter.',
     },
   ],
 };
@@ -137,25 +136,25 @@ export const plan = {
 export const showcase = {
   eyebrow: 'Inside LearningForSuccess',
   heading: 'Everything You Need to Study With Confidence',
-  intro: 'Courses, a free guide and support for schools — all built around one clear method.',
+  intro: 'Two courses, a free guide and support for schools — all built on techniques that work.',
   items: [
     {
       tag: 'Course',
       tab: 'GradeBoost',
       title: 'GradeBoost',
-      meta: 'Study skills for the whole school year',
-      text: 'Stop guessing how to study. GradeBoost shows you how to plan your time, take notes that are worth having and remember what you learn.',
+      meta: 'Seven units · one a week',
+      text: 'Cornell notes, SQ3R reading, study guides, memory systems, time management and looking after your brain. Each unit gives you one skill to master before you move on.',
       cta: 'See the GradeBoost Course',
       href: '/gradeboost/',
       art: 'steps',
     },
     {
       tag: 'Course',
-      tab: 'Exam Revision',
-      title: 'Exam Revision Course',
-      meta: 'For the weeks before your exams',
-      text: 'Find out which topics need the most work, build a timetable around them and revise in a way that makes the knowledge stay put.',
-      cta: 'See the Exam Revision Course',
+      tab: 'ExamX Revision',
+      title: 'ExamX Revision',
+      meta: 'For the run-up to your exams',
+      text: 'Sort your subjects by urgency and importance, plan your sessions around real life, then revise with active recall, past papers and memory techniques.',
+      cta: 'See ExamX Revision',
       href: '/exam-revision/',
       art: 'calendar',
     },
@@ -164,7 +163,7 @@ export const showcase = {
       tab: 'Free Guide',
       title: 'The Free Revision Guide',
       meta: 'A short read you can use tonight',
-      text: 'A quick guide to the revision habits that waste your time, and what to do in their place. Yours free.',
+      text: 'Why highlighters fool you, how to summarise in three steps, and how a 25-minute timer gets you started. Yours free.',
       cta: 'Get the Free Guide',
       href: '/free-guide/',
       art: 'guide',
@@ -184,7 +183,7 @@ export const showcase = {
       tab: 'Meet Simon',
       title: 'Taught by a Teacher Who Has Seen What Works',
       meta: 'Simon Horsey · teacher and author',
-      text: 'Simon leads Arts and Technology at a British international school and wrote Practice Makes Perfect, a book on how to practise well. These courses bring that same thinking to every subject.',
+      text: 'Simon leads Arts and Technology at a British international school and wrote Practice Makes Perfect, a book on how to practise well. These courses bring that same thinking to every subject you study.',
       cta: 'Meet Your Guide',
       href: '/about/',
       art: 'guideperson',
@@ -196,11 +195,11 @@ export const showcase = {
 export const leadMagnet = {
   eyebrow: 'Free Download',
   heading: 'Start Revising Smarter Tonight. A Free Guide.',
-  text: 'Find out which common revision habits waste your time, and what to do in their place. Enter your email and the guide is yours.',
+  text: 'Three quick wins from the courses that you can use this evening. Enter your email and the guide is yours.',
   button: 'Send Me the Guide',
   guideTitle: 'The Free Revision Guide',
-  guideSubtitle: 'Simple changes that make revision stick',
-  needsReview: 'Confirm the free guide exists (title, PDF) and connect the sign-up form to your email provider.',
+  guideSubtitle: 'Three quick wins you can use tonight',
+  needsReview: 'The slides show no free guide yet. Confirm you want one (title, PDF) and connect the sign-up form to your email provider.',
 };
 
 // ── Home: testimonials ──────────────────────────────────────────────────────
@@ -222,6 +221,7 @@ export const closing = {
 };
 
 // ── Course pages ────────────────────────────────────────────────────────────
+// Unit lists and wording are taken from the course slide decks.
 // `enrolUrl: null` means checkout is not connected yet, so the button says
 // "Register Your Interest" and points to the contact page.
 export const courses = {
@@ -229,92 +229,109 @@ export const courses = {
     slug: 'gradeboost',
     name: 'GradeBoost',
     audience: 'For students who want better grades all year',
-    title: 'GradeBoost — Study Skills for Better Grades | LearningForSuccess',
+    title: 'GradeBoost — The Study Skills Course | LearningForSuccess',
     description:
-      'GradeBoost teaches students the study skills school rarely has time for: planning, note-making and remembering what they learn.',
-    heading: 'Work Smarter in Every Subject, All Year Round',
-    lead: 'You are putting the hours in. GradeBoost makes sure those hours count, with a clear method for planning, learning and remembering.',
+      'GradeBoost is a seven-unit study skills course: note-taking, reading, study guides, memory, time management and looking after your brain.',
+    heading: 'Learn the Techniques Once. Use Them in Every Subject.',
+    lead: 'Reading the chapter and thinking you have learned it will not cut it. GradeBoost gives you seven units of techniques that do — and over time you end up doing less work, because your technique is good.',
     price: null,
     enrolUrl: null,
     stakes: {
-      heading: 'Effort Alone Is Not Enough',
-      text: 'Without a method, studying turns into rereading and hoping. That costs you more than marks.',
+      heading: 'Hard Work With Poor Technique Is Wasted Work',
+      text: 'Ever wonder why some students seem to have more free time than you, with the same amount to study? They are not cleverer. They have better habits.',
       items: [
-        'Hours of homework that do not move your grades',
-        'Notes you never look at again',
-        'Topics you understood in class and forgot by the test',
-        'That sinking feeling of not knowing where to start',
+        'Cramming everything into the night before the exam',
+        'Highlighting so much that nothing stands out',
+        'Studying with your phone, the TV or music competing for attention',
+        'Long sessions with no breaks, and little to show for them',
+        'Putting it off until there is no time left to do it well',
       ],
     },
     learn: {
-      heading: 'What You Will Learn',
-      needsReview: 'Draft unit list — replace with the real GradeBoost units.',
+      heading: 'Seven Units. One Skill at a Time.',
       items: [
-        { title: 'Plan Your Week', text: 'Set up a routine that fits around school, so study time stops being a daily negotiation.' },
-        { title: 'Make Notes Worth Keeping', text: 'Turn lessons into short, clear notes you will be glad to have later.' },
-        { title: 'Make It Stick', text: 'Use simple memory techniques so what you learn today is still there next month.' },
-        { title: 'Check What You Know', text: 'Test yourself the right way and find the gaps before your teacher does.' },
-        { title: 'Beat Putting It Off', text: 'Get started quickly, stay focused and finish with time to spare.' },
-        { title: 'Keep It Going', text: 'Build habits that carry you through the year without burning out.' },
+        { title: 'Use Every Way You Learn', text: 'You are not just a "visual learner". See it, say it and do it — using all three is the key.' },
+        { title: 'Take Notes Worth Keeping', text: 'Cornell notes, the read–close–write summary and the SQ3R reading method turn pages into understanding.' },
+        { title: 'Build Your Own Study Guides', text: 'Topic summaries, chapter reviews, mind maps and past papers that show you exactly what you do not know yet.' },
+        { title: 'Remember More', text: 'Test your memory, then train it with the link system, pegs, mnemonics and chunking.' },
+        { title: 'Take Control of Your Time', text: 'Audit your habits, then use Pomodoro, time boxing and a set of steps for beating procrastination.' },
+        { title: 'Look After Your Brain', text: 'Food, water, exercise, sleep and stress all change how well you learn. Small habits make a big difference.' },
       ],
+      includes: [
+        'Short video lessons you can pause and replay',
+        'A quick quiz at the end of each unit to help it stick',
+        'A study spreadsheet to track what you have covered and when to review it',
+        'Downloads such as the procrastination log',
+        'A private group for sharing what is working',
+      ],
+      includesReview: 'These come from your slides — confirm each one is still part of the course.',
     },
     steps: [
-      { title: 'Join the Course', text: 'Sign up and get everything you need in one place.' },
-      { title: 'Follow the Lessons', text: 'Short lessons and handouts you can use the same evening.' },
-      { title: 'Use It Everywhere', text: 'Apply the method in every subject and watch the difference build.' },
+      { title: 'Join the Course', text: 'Sign up and get the lessons, quizzes and downloads in one place.' },
+      { title: 'Take One Unit a Week', text: 'Watch the lesson, then spend the week using the technique on your own school work.' },
+      { title: 'Use It Everywhere', text: 'Carry each technique into every subject, and build a streak you will not want to break.' },
     ],
     faqs: [
-      { q: 'Who is GradeBoost for?', a: 'Students who work hard and want that work to show in their grades. Parents often join in for the first few lessons.' },
-      { q: 'How much time does it take?', a: null },
+      { q: 'Who is GradeBoost for?', a: 'Students who work hard and want that work to show in their grades. The techniques apply to any subject, with examples from maths, science, history and languages.' },
+      { q: 'How much time does it take?', a: 'There are seven units. Spend a week on each one: learn the technique, then practise it on your real school work until it becomes a habit.' },
+      { q: 'My exams are only a few weeks away. Is this the right course?', a: 'Start with ExamX Revision, which is built for the run-up to exams. Come back to GradeBoost afterwards and you should never be in that position again.' },
       { q: 'How do I get access?', a: null },
     ],
-    closing: 'Give Your Hard Work a Method',
+    closing: 'Good Technique Beats Long Hours',
   },
 
   'exam-revision': {
     slug: 'exam-revision',
-    name: 'Exam Revision Course',
+    name: 'ExamX Revision',
     audience: 'For students with exams on the way',
-    title: 'Exam Revision Course — Revise With a Plan | LearningForSuccess',
+    title: 'ExamX Revision — Revise With a Plan | LearningForSuccess',
     description:
-      'Rate your confidence topic by topic, build a revision timetable around what matters most and walk into your exams prepared.',
+      'ExamX Revision helps you prioritise your subjects, build a revision plan that survives real life and revise with techniques that make knowledge stick.',
     heading: 'Walk Into Your Exams Knowing You Are Ready',
-    lead: 'Exams are close and the pile of topics is big. This course turns it into a timetable you can follow, one session at a time.',
+    lead: 'Not every subject needs the same amount of revision. ExamX Revision shows you where your time should go, then gives you the techniques to make every session count.',
     price: null,
     enrolUrl: null,
     stakes: {
-      heading: 'Revising Without a Plan Wastes the Time You Have Left',
-      text: 'Most students revise what they already know, because it feels good. The marks are hiding in the topics they avoid.',
+      heading: 'A Timetable Is Not a Plan',
+      text: 'Most revision timetables collapse the first time football runs to extra time. Then it feels like there is no point starting at all.',
       items: [
-        'Starting too late because the job feels too big',
-        'Going over favourite topics again and again',
-        'Late nights that leave you tired for the exam itself',
-        'Walking in unsure what is going to come up',
+        'Giving every subject the same time, whether it needs it or not',
+        'Going back over the topics you already know',
+        'Highlighting the textbook and calling it revision',
+        'Leaving past papers until it is too late to act on them',
+        'Waiting to feel motivated before you begin',
       ],
     },
     learn: {
       heading: 'What You Will Do',
-      needsReview: 'Draft unit list — replace with the real Revision Course units.',
       items: [
-        { title: 'List Every Topic', text: 'See the whole job on one page, subject by subject.' },
-        { title: 'Rate Your Confidence', text: 'Score each topic so you know exactly where the marks are waiting.' },
-        { title: 'Build Your Timetable', text: 'Give the most time to the topics that need it, and fit it around real life.' },
-        { title: 'Revise So It Sticks', text: 'Swap rereading for techniques that make you recall and use what you know.' },
-        { title: 'Practise Under Exam Conditions', text: 'Use past questions to get used to the clock and the mark scheme.' },
-        { title: 'Arrive Calm', text: 'Plan the final week, the night before and the morning of the exam.' },
+        { title: 'Decide What Matters Most', text: 'Use your results, your teachers and the priority matrix to sort subjects by urgency and importance.' },
+        { title: 'Make a Plan That Bends', text: 'Schedule 40-minute sessions around real life, keep the plan separate from the schedule, and track what you have covered.' },
+        { title: 'Get Quick Wins', text: 'Survey, question, read, recite, review. SQ3R turns a chapter you struggled with into one you understand.' },
+        { title: 'Condense Your Notes', text: 'Cornell notes, mind maps and half-page topic summaries — and why you should put the highlighter down.' },
+        { title: 'Practise Like It Is Real', text: 'Sit past papers under exam conditions, then use the mark scheme to find the gaps and go back to fill them.' },
+        { title: 'Remember and Stay Fresh', text: 'Links, pegs, mnemonics and chunking for memory. Pomodoro and time boxing so you keep going without burning out.' },
       ],
+      includes: [
+        'Short video lessons, each ending with one action to take',
+        'A priority matrix for sorting your subjects',
+        'Spreadsheet templates for your revision plan and tracker',
+        'Worked examples from history, science, maths and languages',
+      ],
+      includesReview: 'These come from your slides — confirm each one is still part of the course.',
     },
     steps: [
-      { title: 'Join the Course', text: 'Sign up and get the lessons and handouts straight away.' },
-      { title: 'Build Your Plan', text: 'Rate your topics and create a timetable that is yours.' },
-      { title: 'Follow It to Exam Day', text: 'Tick off each session and watch your confidence grow.' },
+      { title: 'Join the Course', text: 'Sign up and get the lessons and templates straight away.' },
+      { title: 'Build Your Plan', text: 'Prioritise your subjects, break them into topics and set your revision times.' },
+      { title: 'Follow It to Exam Day', text: 'Show up each day, track what you cover, and let consistency do what motivation cannot.' },
     ],
     faqs: [
-      { q: 'When should I start?', a: 'As soon as you know your exam dates. The earlier you start, the lighter each week feels — but the course still helps if time is short.' },
-      { q: 'Which exams does it work for?', a: null },
+      { q: 'When should I start?', a: 'As soon as you know your exam dates. The earlier you start, the lighter each week feels — and the more times you can review each topic.' },
+      { q: 'Which exams does it work for?', a: 'Any exam where you need to understand and recall what you have been taught. The examples come from subjects such as history, science, maths and languages.' },
+      { q: 'What is the single most important technique?', a: 'Active recall: closing the book and bringing the information back from memory. It takes more effort than rereading, and that effort is what makes it work.' },
       { q: 'How do I get access?', a: null },
     ],
-    closing: 'Turn the Weeks You Have Into a Plan',
+    closing: 'Consistency Beats Motivation. Start Today.',
   },
 };
 
@@ -339,7 +356,7 @@ export const schools = {
     heading: 'What Your School Gets',
     needsReview: 'Draft offer — confirm what the schools package includes.',
     items: [
-      { title: 'Access for the Whole Cohort', text: 'GradeBoost and the Exam Revision Course for every student in the year group.' },
+      { title: 'Access for the Whole Cohort', text: 'GradeBoost and ExamX Revision for every student in the year group.' },
       { title: 'Ready-to-Use Materials', text: 'Lessons and handouts that fit into tutor time or study skills sessions.' },
       { title: 'One Shared Language', text: 'Staff, students and parents all talking about revision in the same way.' },
     ],
@@ -380,7 +397,7 @@ export const footer = {
       label: 'Courses',
       links: [
         { label: 'GradeBoost', href: '/gradeboost/' },
-        { label: 'Exam Revision Course', href: '/exam-revision/' },
+        { label: 'ExamX Revision', href: '/exam-revision/' },
         { label: 'For Schools', href: '/schools/' },
       ],
     },

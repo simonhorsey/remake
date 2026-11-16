@@ -1,7 +1,7 @@
 # LearningForSuccess
 
-The website for the Essentials for Learning courses (GradeBoost and the Exam
-Revision Course), built for <https://www.learning-for-success.com> and Cloudflare.
+The website for the Essentials for Learning courses (GradeBoost and ExamX
+Revision), built for <https://www.learning-for-success.com> and Cloudflare.
 
 It follows the section pattern of the StoryBrand home page — hero, three paths,
 three-step plan, numbered showcase, free guide, testimonials, closing paths —
