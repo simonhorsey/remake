@@ -3,8 +3,8 @@
 **REMAKE COMPLETE** — 43 of 43 checks passed.
 
 - Reference pattern: https://www.storybrand.com (home page), read 2026-11-16
-- Built site: 10 pages for https://www.learningforsuccess.com
-- Generated: 2026-11-16 05:54 UTC by `npm run report`
+- Built site: 10 pages for https://www.learning-for-success.com
+- Generated: 2026-11-16 06:05 UTC by `npm run report`
 
 This report is written by `scripts/remake-report.cjs`, which loads every built page in a real browser. The verdict covers the build. Content still waiting on the site owner is listed at the end and does not affect it.
 
@@ -75,7 +75,7 @@ This report is written by `scripts/remake-report.cjs`, which loads every built p
 |---|---|---|
 | ✅ | Title, description, canonical address and sharing tags on every page |  |
 | ✅ | Sitemap lists every page on the www address |  |
-| ✅ | robots.txt present and points at the sitemap |  |
+| ✅ | robots.txt present and points at the sitemap on the www address |  |
 | ✅ | Favicon and 1200×630 sharing image present |  |
 
 ## H · Ready for Cloudflare

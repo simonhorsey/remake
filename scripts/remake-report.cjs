@@ -23,7 +23,7 @@ const ROOT = path.join(__dirname, '..');
 const DIST = path.join(ROOT, 'dist');
 const reference = JSON.parse(fs.readFileSync(path.join(ROOT, 'reference', 'structure.json'), 'utf8'));
 const fingerprint = JSON.parse(fs.readFileSync(path.join(ROOT, 'reference', 'shingles.json'), 'utf8'));
-const SITE_HOST = 'www.learningforsuccess.com';
+let SITE_HOST = ''; // read from src/content/site.js at start-up
 const BANNED = [/storybrand/i, /donald\s+miller/i, /business made simple/i];
 const WIDTHS = [360, 768, 1280];
 
@@ -64,6 +64,9 @@ function listPages() {
 
 (async () => {
   if (!fs.existsSync(path.join(DIST, 'index.html'))) { console.error('No build found. Run: npm run build'); process.exit(2); }
+  const { site } = await import(require('url').pathToFileURL(path.join(ROOT, 'src', 'content', 'site.js')).href);
+  SITE_HOST = new URL(site.url).host;
+  const BARE_HOST = SITE_HOST.replace(/^www\./, '');
   const server = await serve();
   const base = `http://127.0.0.1:${server.address().port}`;
   const browser = await chromium.launch(process.env.CHROME_PATH ? { executablePath: process.env.CHROME_PATH } : {});
@@ -335,7 +338,7 @@ function listPages() {
     const mustList = pages.filter((p) => p !== '/404.html');
     check(G, 'Sitemap lists every page on the www address', fs.existsSync(sm[0]) && mustList.every((p) => smText.includes(`https://${SITE_HOST}${p}`)));
     const robots = fs.existsSync(path.join(DIST, 'robots.txt')) ? fs.readFileSync(path.join(DIST, 'robots.txt'), 'utf8') : '';
-    check(G, 'robots.txt present and points at the sitemap', robots.includes('sitemap-index.xml'));
+    check(G, 'robots.txt present and points at the sitemap on the www address', robots.includes(`https://${SITE_HOST}/sitemap-index.xml`));
     const og = path.join(DIST, 'og.png');
     check(G, 'Favicon and 1200×630 sharing image present', fs.existsSync(path.join(DIST, 'favicon.svg')) && fs.existsSync(og) && fs.readFileSync(og).readUInt32BE(16) === 1200 && fs.readFileSync(og).readUInt32BE(20) === 630);
   }
@@ -346,7 +349,7 @@ function listPages() {
     const headers = fs.existsSync(path.join(DIST, '_headers')) ? fs.readFileSync(path.join(DIST, '_headers'), 'utf8') : '';
     check(G, '_headers sets security headers and long-term caching for assets', /X-Content-Type-Options/.test(headers) && /immutable/.test(headers));
     const redirects = fs.existsSync(path.join(DIST, '_redirects')) ? fs.readFileSync(path.join(DIST, '_redirects'), 'utf8') : '';
-    check(G, '_redirects sends the bare domain to www', redirects.includes('https://learningforsuccess.com/*') && redirects.includes(`https://${SITE_HOST}/:splat`));
+    check(G, '_redirects sends the bare domain to www', redirects.includes(`https://${BARE_HOST}/*`) && redirects.includes(`https://${SITE_HOST}/:splat`));
     const wr = fs.existsSync(path.join(ROOT, 'wrangler.jsonc')) ? fs.readFileSync(path.join(ROOT, 'wrangler.jsonc'), 'utf8') : '';
     check(G, 'wrangler.jsonc points at dist/ so `npm run deploy` works', /"directory":\s*"\.\/dist"/.test(wr));
     check(G, 'Nothing loaded from other servers (fonts are self-hosted)', issues.thirdParty.length === 0, list(issues.thirdParty));

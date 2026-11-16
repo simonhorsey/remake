@@ -11,7 +11,8 @@ export const site = {
   draft: true,
   name: 'LearningForSuccess',
   programme: 'Essentials for Learning',
-  url: 'https://www.learningforsuccess.com',
+  // The one place the web address is set. If it changes, also update public/_redirects.
+  url: 'https://www.learning-for-success.com',
   title: 'LearningForSuccess | Learn How to Learn. Watch Your Grades Follow.',
   description:
     'Study skills and exam revision courses that show students exactly how to learn, so the effort they put in shows up in their grades.',
@@ -22,7 +23,7 @@ export const site = {
     leadMagnetAction: null, // e.g. your email provider's form endpoint
     contactAction: null,
   },
-  contactEmail: null, // e.g. 'hello@learningforsuccess.com'
+  contactEmail: null, // e.g. 'hello@learning-for-success.com'
   social: [], // e.g. [{ label: 'Instagram', href: 'https://…' }]
 };
 

@@ -1,7 +1,7 @@
 # LearningForSuccess
 
 The website for the Essentials for Learning courses (GradeBoost and the Exam
-Revision Course), built for <https://www.learningforsuccess.com> and Cloudflare.
+Revision Course), built for <https://www.learning-for-success.com> and Cloudflare.
 
 It follows the section pattern of the StoryBrand home page — hero, three paths,
 three-step plan, numbered showcase, free guide, testimonials, closing paths —
@@ -46,7 +46,7 @@ Either connect this repository in the Cloudflare dashboard (build command
 npm run deploy
 ```
 
-Then add `www.learningforsuccess.com` as a custom domain. `public/_redirects`
+Then add `www.learning-for-success.com` as a custom domain. `public/_redirects`
 already sends the bare domain to `www`.
 
 ## Where things are
