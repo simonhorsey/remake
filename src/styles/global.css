@@ -1,23 +1,28 @@
 :root {
-  --ink: #0d1b2a;
-  --ink-2: #14273d;
-  --ink-3: #1e3653;
-  --paper: #fbf8f2;
-  --paper-2: #f3ede2;
-  --card: #ffffff;
-  --line: #e4dccd;
-  --text: #1a2330;
-  --muted: #566273;
-  --on-ink: #f6f1e7;
-  --on-ink-muted: #a9b6c7;
-  --accent: #ffb703;
-  --accent-deep: #e09a00;
-  --accent-ink: #1d1400;
-  --teal: #16746a;
-  --teal-soft: #d9efe9;
+  /* Essentials For Learning brand: Standing Waters blue, Summer Citrus orange, Briquette Grey. */
+  --brand-blue: #005499;
+  --brand-orange: #f57e2c;
+  --brand-grey: #515151;
 
-  --font-display: 'Roboto Slab Variable', 'Roboto Slab', Georgia, 'Times New Roman', serif;
-  --font-body: 'Roboto Variable', Roboto, 'Helvetica Neue', Helvetica, system-ui, sans-serif;
+  --ink: #002442;        /* deep end of the brand gradient, used for dark sections */
+  --ink-2: #01305a;
+  --ink-3: #0b4877;
+  --paper: #f7f9fc;
+  --paper-2: #eaf1f8;
+  --card: #ffffff;
+  --line: #d6e0ea;
+  --text: #2b2f33;
+  --muted: var(--brand-grey);
+  --on-ink: #ffffff;
+  --on-ink-muted: #b9cee2;
+  --accent: var(--brand-orange);
+  --accent-deep: #de6a17;
+  --accent-ink: #1c0f03;
+  --teal: var(--brand-blue);   /* text accent on light backgrounds */
+  --teal-soft: #dbe8f3;
+
+  --font-display: 'Source Sans 3 Variable', 'Source Sans 3', 'Helvetica Neue', Helvetica, system-ui, sans-serif;
+  --font-body: 'Source Sans 3 Variable', 'Source Sans 3', 'Helvetica Neue', Helvetica, system-ui, sans-serif;
 
   --wrap: 1160px;
   --gutter: clamp(18px, 4vw, 40px);
@@ -31,7 +36,7 @@
 *::before,
 *::after { box-sizing: border-box; }
 
-html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: 88px; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: 100px; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
@@ -42,7 +47,7 @@ body {
   background: var(--paper);
   color: var(--text);
   font-family: var(--font-body);
-  font-size: 1.0625rem;
+  font-size: 1.125rem;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
@@ -55,9 +60,9 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 
 h1, h2, h3, h4 {
   font-family: var(--font-display);
-  font-weight: 700;
-  line-height: 1.12;
-  letter-spacing: -0.015em;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
   margin: 0 0 0.5em;
   text-wrap: balance;
 }
@@ -194,7 +199,7 @@ h3 { font-size: clamp(1.25rem, 2vw, 1.55rem); line-height: 1.2; }
 .ticks li { position: relative; padding-left: 2rem; margin-bottom: 0.7rem; }
 .ticks li::before {
   content: ''; position: absolute; left: 0; top: 0.3em; width: 1.15rem; height: 1.15rem; border-radius: 50%;
-  background: var(--teal-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.5l2.6 2.6L12 5.6' fill='none' stroke='%231f8a7d' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 80% no-repeat;
+  background: var(--teal-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.5l2.6 2.6L12 5.6' fill='none' stroke='%23005499' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 80% no-repeat;
 }
 .crosses li::before {
   background: #fbe3df url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M5 5l6 6M11 5l-6 6' fill='none' stroke='%23b3402e' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E") center / 80% no-repeat;

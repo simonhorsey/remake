@@ -29,26 +29,26 @@ const showTestimonials = hasTestimonials || site.draft;
       </div>
       <div class="hero__art" aria-hidden="true">
         <svg viewBox="0 0 520 460" width="520" height="460">
-          <rect x="24" y="36" width="472" height="388" rx="22" fill="#14273d" stroke="#1e3653" stroke-width="2" />
-          <g stroke="#1e3653" stroke-width="1.5">
+          <rect x="24" y="36" width="472" height="388" rx="22" fill="#01305a" stroke="#0b4877" stroke-width="2" />
+          <g stroke="#0b4877" stroke-width="1.5">
             <line x1="64" y1="340" x2="456" y2="340" /><line x1="64" y1="270" x2="456" y2="270" />
             <line x1="64" y1="200" x2="456" y2="200" /><line x1="64" y1="130" x2="456" y2="130" />
           </g>
-          <path class="hero__fill" d="M64 340h98v-70h98v-70h98v-70h98v210H64z" fill="#ffb703" opacity="0.1" />
-          <path class="hero__line" d="M64 340h98v-70h98v-70h98v-70h98" fill="none" stroke="#ffb703" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" pathLength="1" />
-          <g fill="#f6f1e7"><circle cx="113" cy="340" r="7" /><circle cx="211" cy="270" r="7" /><circle cx="309" cy="200" r="7" /></g>
-          <circle cx="456" cy="130" r="15" fill="#ffb703" />
-          <circle cx="456" cy="130" r="26" fill="none" stroke="#ffb703" stroke-width="2" opacity="0.45" />
-          <g font-family="Roboto Variable, Roboto, sans-serif" font-size="15" font-weight="600" fill="#a9b6c7">
+          <path class="hero__fill" d="M64 340h98v-70h98v-70h98v-70h98v210H64z" fill="#f57e2c" opacity="0.1" />
+          <path class="hero__line" d="M64 340h98v-70h98v-70h98v-70h98" fill="none" stroke="#f57e2c" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" pathLength="1" />
+          <g fill="#ffffff"><circle cx="113" cy="340" r="7" /><circle cx="211" cy="270" r="7" /><circle cx="309" cy="200" r="7" /></g>
+          <circle cx="456" cy="130" r="15" fill="#f57e2c" />
+          <circle cx="456" cy="130" r="26" fill="none" stroke="#f57e2c" stroke-width="2" opacity="0.45" />
+          <g font-family="Source Sans 3 Variable, sans-serif" font-size="16" font-weight="600" fill="#b9cee2">
             <text x="113" y="372" text-anchor="middle">Plan</text>
             <text x="211" y="302" text-anchor="middle">Learn</text>
             <text x="309" y="232" text-anchor="middle">Remember</text>
             <text x="407" y="162" text-anchor="middle">Achieve</text>
           </g>
           <g transform="translate(56 64)">
-            <rect width="176" height="44" rx="22" fill="#1f8a7d" />
-            <path d="M22 22l7 7 13-14" fill="none" stroke="#f6f1e7" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
-            <text x="56" y="28" font-family="Roboto Variable, Roboto, sans-serif" font-size="16" font-weight="700" fill="#f6f1e7">A clear method</text>
+            <rect width="176" height="44" rx="22" fill="#005499" />
+            <path d="M22 22l7 7 13-14" fill="none" stroke="#ffffff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
+            <text x="56" y="28" font-family="Source Sans 3 Variable, sans-serif" font-size="17" font-weight="600" fill="#ffffff">A clear method</text>
           </g>
         </svg>
       </div>
@@ -216,8 +216,8 @@ const showTestimonials = hasTestimonials || site.draft;
   .hero { position: relative; padding-top: clamp(48px, 7vw, 96px); overflow: hidden; }
   .hero::before {
     content: ''; position: absolute; inset: 0; pointer-events: none;
-    background: radial-gradient(900px 480px at 82% 12%, rgba(31, 138, 125, 0.28), transparent 62%),
-      radial-gradient(700px 420px at 4% 96%, rgba(255, 183, 3, 0.1), transparent 60%);
+    background: radial-gradient(900px 480px at 82% 12%, rgba(0, 84, 153, 0.65), transparent 62%),
+      radial-gradient(700px 420px at 4% 96%, rgba(245, 126, 44, 0.14), transparent 60%);
   }
   .hero > .wrap { position: relative; }
   .hero__grid { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr); gap: clamp(24px, 5vw, 64px); align-items: center; }
@@ -266,7 +266,7 @@ const showTestimonials = hasTestimonials || site.draft;
   .showcase__art { min-height: 300px; background: var(--ink-2); }
   .showcase__body { padding: clamp(24px, 4vw, 48px); display: flex; flex-direction: column; align-items: flex-start; justify-content: center; }
   .showcase__tag { display: flex; align-items: center; gap: 0.75rem; font-size: 0.8125rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.75rem; }
-  .showcase__num { color: #6b7684; font-variant-numeric: tabular-nums; }
+  .showcase__num { color: var(--brand-grey); font-variant-numeric: tabular-nums; }
   .showcase__meta { font-weight: 600; margin-bottom: 0.6rem; }
   .showcase__body p:not(.showcase__tag):not(.showcase__meta) { color: var(--muted); }
   .showcase__body .btn { margin-top: 0.75rem; }
@@ -292,7 +292,7 @@ const showTestimonials = hasTestimonials || site.draft;
   .guide-cover {
     width: min(100%, 300px); aspect-ratio: 3 / 4; display: flex; flex-direction: column; padding: 1.75rem;
     background: var(--ink); color: var(--on-ink); border-radius: 6px 14px 14px 6px; border-left: 10px solid var(--accent);
-    box-shadow: 18px 22px 0 -4px var(--teal), var(--shadow); transform: rotate(-3deg);
+    box-shadow: 18px 22px 0 -4px var(--brand-blue), var(--shadow); transform: rotate(-3deg);
   }
   .guide-cover__kicker { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); }
   .guide-cover__title { font-family: var(--font-display); font-weight: 800; font-size: 1.9rem; line-height: 1.08; margin-top: 1rem; }

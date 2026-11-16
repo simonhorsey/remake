@@ -37,7 +37,7 @@ import { nav, primaryCta } from '../content/site.js';
 
 <style>
   .site-header { position: sticky; top: 0; z-index: 50; background: var(--ink); color: var(--on-ink); border-bottom: 1px solid var(--ink-3); }
-  .site-header__bar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 72px; }
+  .site-header__bar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 84px; }
   .site-nav { display: flex; align-items: center; gap: 1.5rem; }
   .site-nav__list { display: flex; align-items: center; gap: 0.25rem; }
   .nav-group { position: relative; }
@@ -76,7 +76,7 @@ import { nav, primaryCta } from '../content/site.js';
     .site-nav {
       display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; align-items: stretch; gap: 1rem;
       background: var(--ink); border-bottom: 1px solid var(--ink-3); padding: 0.75rem var(--gutter) 1.5rem;
-      max-height: calc(100dvh - 72px); overflow-y: auto;
+      max-height: calc(100dvh - 84px); overflow-y: auto;
     }
     .site-nav.is-open { display: flex; }
     .site-nav__list { flex-direction: column; align-items: stretch; gap: 0; }
