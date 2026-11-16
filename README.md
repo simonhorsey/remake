@@ -39,30 +39,37 @@ passes. It needs Playwright (`npm i -D playwright && npx playwright install chro
 
 ## Put it on Cloudflare
 
-1. In the Cloudflare dashboard, create a Pages project from this repository:
-   build command `npm run build`, output directory `dist`.
-2. Connect the domain. It is registered through Sitejet, so pick one route:
+The site deploys as a Cloudflare Worker serving static files (`wrangler.jsonc`
+points at `dist/`). No domain is needed to start: Cloudflare gives it a free
+`workers.dev` address.
 
-   **A. Move the domain's DNS to Cloudflare (recommended).** Add
-   `learning-for-success.com` as a site in Cloudflare, copy across any existing
-   DNS records (especially MX records if you use email on the domain), then
-   either transfer the domain away from Sitejet (Domain Manager → Transfer gives
-   you the auth code) or point its nameservers at Cloudflare. Add both
-   `www.learning-for-success.com` and `learning-for-success.com` as custom
-   domains on the Pages project, then create a Bulk Redirect in Cloudflare from
-   the bare domain to `https://www.learning-for-success.com`.
+**First build**
 
-   **B. Leave DNS at Sitejet.** Add `www.learning-for-success.com` as a custom
-   domain on the Pages project first, then create a CNAME record for `www` at
-   Sitejet pointing to `<your-project>.pages.dev`. Only `www` works this way;
-   the bare domain cannot point at Cloudflare without route A.
+1. In the Cloudflare dashboard go to **Workers & Pages → Create application**
+   and choose **GitHub**. Authorise Cloudflare for your GitHub account when asked.
+2. Pick the `remake` repository.
+3. Keep the project name as `learningforsuccess` (it must match `name` in
+   `wrangler.jsonc`). Build command `npm run build`, deploy command
+   `npx wrangler deploy`.
+4. **Save and Deploy.** Every push to `main` rebuilds the site from then on.
 
-Either way the current Sitejet site stops being served at that address once DNS
-changes. The bare-domain redirect is a Cloudflare dashboard setting: a
-`_redirects` file cannot do it.
+**Connect the domain (when ready to launch)**
 
-`npm run deploy` is also available if you prefer to publish from your own
-machine with Wrangler.
+A Worker can only use a domain that Cloudflare manages, and
+`learning-for-success.com` is registered through Sitejet, so:
+
+1. Add `learning-for-success.com` as a site in Cloudflare and copy across any
+   existing DNS records (especially MX records if you use email on the domain).
+2. Either transfer the domain away from Sitejet (Domain Manager → Transfer gives
+   you the auth code) or point its nameservers at Cloudflare.
+3. On the Worker, open **Domains** and add `www.learning-for-success.com`.
+4. Add a redirect rule from the bare domain to `https://www.learning-for-success.com`,
+   plus a proxied DNS record for the bare domain so the rule can run.
+
+The current Sitejet site stops being served at that address once DNS changes.
+
+`npm run deploy` also works from your own machine once you have run
+`npx wrangler login`.
 
 ## Where things are
 

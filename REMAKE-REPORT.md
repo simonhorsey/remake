@@ -4,7 +4,7 @@
 
 - Reference pattern: https://www.storybrand.com (home page), read 2026-11-16
 - Built site: 10 pages for https://www.learning-for-success.com
-- Generated: 2026-11-16 06:06 UTC by `npm run report`
+- Generated: 2026-11-16 06:59 UTC by `npm run report`
 
 This report is written by `scripts/remake-report.cjs`, which loads every built page in a real browser. The verdict covers the build. Content still waiting on the site owner is listed at the end and does not affect it.
 
