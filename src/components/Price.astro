@@ -1,0 +1,12 @@
+---
+import Draft from './Draft.astro';
+import { site } from '../content/site.js';
+const { label, value } = Astro.props;
+const show = value || site.draft;
+---
+{show && (
+  <p class="path__price">
+    <span class="path__price-label">{label}</span>
+    {value ? <span class="path__price-value">{value}</span> : <Draft label="Price to confirm" />}
+  </p>
+)}

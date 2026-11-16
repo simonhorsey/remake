@@ -1,0 +1,18 @@
+---
+import Base from '../layouts/Base.astro';
+import Draft from '../components/Draft.astro';
+import { site } from '../content/site.js';
+---
+<Base title={`Terms of Use | ${site.name}`} description="Terms of Use for LearningForSuccess, the home of the Essentials for Learning study skills and exam revision courses." noindex>
+  <section class="page-hero" data-section="hero">
+    <div class="wrap">
+      <h1>Terms of Use</h1>
+    </div>
+  </section>
+  <section class="section" data-section="legal">
+    <div class="wrap narrow prose">
+      <Draft note label="Terms of Use text to be supplied before launch. This page is a holder so the footer link works." />
+      {!site.draft && <p>This page is being updated. Please <a href="/contact/">contact us</a> with any questions.</p>}
+    </div>
+  </section>
+</Base>

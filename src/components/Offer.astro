@@ -1,0 +1,111 @@
+---
+// Shared sales-page body used by the course pages and the schools page.
+// Order: hero → what's at stake → what you get → plan → guide → FAQ → closing CTA.
+import Steps from './Steps.astro';
+import Draft from './Draft.astro';
+import { site, about } from '../content/site.js';
+const { audience, heading, lead, price, showPrice = false, cta, stakes, offer, steps, faqs = [], closing } = Astro.props;
+const visibleFaqs = faqs.filter((f) => f.a || site.draft);
+---
+<section class="page-hero" data-section="hero">
+  <div class="wrap">
+    <p class="eyebrow" style="color: var(--accent)">{audience}</p>
+    <h1>{heading}</h1>
+    <p class="lede">{lead}</p>
+    <div class="page-hero__actions">
+      <a class="btn" href={cta.href}>{cta.label} <span class="arrow" aria-hidden="true">→</span></a>
+      {showPrice && (price || site.draft) && (
+        <p class="page-hero__price">Course fee: {price ? <strong>{price}</strong> : <Draft label="Price to confirm" />}</p>
+      )}
+    </div>
+    {cta.pending && <Draft note label="Checkout not connected yet, so this button goes to the contact page." />}
+  </div>
+</section>
+
+<section class="section" data-section="stakes">
+  <div class="wrap grid grid--2 offer__split">
+    <div>
+      <p class="eyebrow">The Problem</p>
+      <h2>{stakes.heading}</h2>
+      <p class="lede">{stakes.text}</p>
+    </div>
+    <ul class="ticks crosses card">
+      {stakes.items.map((i) => <li>{i}</li>)}
+    </ul>
+  </div>
+</section>
+
+<section class="section section--tint" data-section="offer">
+  <div class="wrap">
+    <div class="offer__head">
+      <p class="eyebrow">The Solution</p>
+      <h2>{offer.heading}</h2>
+      {offer.needsReview && <Draft note label={offer.needsReview} />}
+    </div>
+    <ul class="grid grid--3">
+      {offer.items.map((i, n) => (
+        <li class="card offer__item">
+          <span class="offer__num" aria-hidden="true">{String(n + 1).padStart(2, '0')}</span>
+          <h3>{i.title}</h3>
+          <p>{i.text}</p>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<section class="section section--dark" data-section="plan">
+  <div class="wrap">
+    <div class="center offer__head">
+      <h2>How It Works</h2>
+    </div>
+    <Steps steps={steps} />
+  </div>
+</section>
+
+<section class="section" data-section="guide">
+  <div class="wrap grid grid--2 offer__split">
+    <div>
+      <p class="eyebrow">Your Guide</p>
+      <h2>Built by a Teacher Who Has Seen What Works</h2>
+      <p class="lede">{about.body[0]}</p>
+      <p><a class="offer__link" href="/about/">Meet Simon <span aria-hidden="true">→</span></a></p>
+    </div>
+    <ul class="ticks card">
+      {about.credentials.map((c) => <li>{c}</li>)}
+    </ul>
+  </div>
+</section>
+
+{visibleFaqs.length > 0 && (
+  <section class="section section--tint" data-section="faq">
+    <div class="wrap narrow">
+      <h2>Questions Students and Parents Ask</h2>
+      <div class="faq">
+        {visibleFaqs.map((f) => (
+          <details>
+            <summary>{f.q}</summary>
+            <div>{f.a ? <p>{f.a}</p> : <Draft label="Answer to add" />}</div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+)}
+
+<section class="section section--dark center" data-section="closing">
+  <div class="wrap">
+    <h2 class="offer__closing">{closing}</h2>
+    <a class="btn" href={cta.href}>{cta.label} <span class="arrow" aria-hidden="true">→</span></a>
+  </div>
+</section>
+
+<style>
+  .offer__split { align-items: center; gap: clamp(24px, 5vw, 64px); }
+  .offer__head { margin-bottom: clamp(28px, 4vw, 48px); }
+  .offer__item p { color: var(--muted); margin: 0; }
+  .offer__num { display: block; font-family: var(--font-display); font-weight: 800; color: var(--teal); margin-bottom: 0.6rem; }
+  .offer__link { color: var(--teal); font-weight: 700; }
+  .offer__closing { max-width: 20ch; margin-inline: auto; margin-bottom: 1.5rem; }
+  ul.card.ticks li:last-child { margin-bottom: 0; }
+</style>

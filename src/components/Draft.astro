@@ -1,0 +1,9 @@
+---
+// A small visible tag for anything still waiting on the site owner.
+// Only renders while `site.draft` is true.
+import { site } from '../content/site.js';
+const { label = 'Draft', note = false } = Astro.props;
+---
+{site.draft && (note
+  ? <span class="draft-note" data-placeholder={label}><strong>Draft:</strong> {label}</span>
+  : <span class="draft-tag" data-placeholder={label}>{label}</span>)}

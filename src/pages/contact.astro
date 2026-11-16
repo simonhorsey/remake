@@ -1,0 +1,59 @@
+---
+import Base from '../layouts/Base.astro';
+import FormShell from '../components/FormShell.astro';
+import Draft from '../components/Draft.astro';
+import { site } from '../content/site.js';
+---
+<Base title={`Contact | ${site.name}`} description="Ask a question about GradeBoost, the Exam Revision Course or bringing Essentials for Learning to your school.">
+  <section class="page-hero" data-section="hero">
+    <div class="wrap">
+      <p class="eyebrow" style="color: var(--accent)">Contact</p>
+      <h1>Ask a Question. Get a Straight Answer.</h1>
+      <p class="lede">Tell us what you need and we will point you to the right course.</p>
+    </div>
+  </section>
+  <section class="section" data-section="contact">
+    <div class="wrap narrow">
+      <FormShell action={site.forms.contactAction} name="contact" notConnected="Contact form not connected yet — add an endpoint in src/content/site.js.">
+        <div class="contact__fields">
+          <div class="field">
+            <label for="c-name">Your name</label>
+            <input class="input" id="c-name" name="name" type="text" autocomplete="name" required />
+          </div>
+          <div class="field">
+            <label for="c-email">Email address</label>
+            <input class="input" id="c-email" name="email" type="email" autocomplete="email" required />
+          </div>
+          <div class="field">
+            <label for="c-about">What is it about?</label>
+            <select class="input" id="c-about" name="about">
+              <option value="general">A general question</option>
+              <option value="gradeboost">GradeBoost</option>
+              <option value="exam-revision">Exam Revision Course</option>
+              <option value="schools">Essentials for Learning in my school</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="c-message">Your message</label>
+            <textarea class="textarea" id="c-message" name="message" required></textarea>
+          </div>
+          <button class="btn btn--dark" type="submit">Send Message</button>
+        </div>
+      </FormShell>
+      {site.contactEmail
+        ? <p class="form-small">Prefer email? Write to <a href={`mailto:${site.contactEmail}`}>{site.contactEmail}</a>.</p>
+        : <p class="form-small"><Draft label="Contact email to add" /></p>}
+    </div>
+  </section>
+</Base>
+<style>
+  .contact__fields { display: grid; gap: 1.1rem; justify-items: start; }
+  .contact__fields .field { width: 100%; }
+</style>
+<script is:inline>
+  (function () {
+    var about = new URLSearchParams(location.search).get('about');
+    var select = document.getElementById('c-about');
+    if (about && select && select.querySelector('option[value="' + about.replace(/[^a-z-]/g, '') + '"]')) select.value = about;
+  })();
+</script>

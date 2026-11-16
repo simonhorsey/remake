@@ -1,0 +1,17 @@
+---
+import Base from '../layouts/Base.astro';
+import Offer from '../components/Offer.astro';
+import { schools } from '../content/site.js';
+---
+<Base title={schools.title} description={schools.description}>
+  <Offer
+    audience={schools.audience}
+    heading={schools.heading}
+    lead={schools.lead}
+    cta={schools.cta}
+    stakes={schools.stakes}
+    offer={schools.offer}
+    steps={schools.steps}
+    closing={schools.closing}
+  />
+</Base>

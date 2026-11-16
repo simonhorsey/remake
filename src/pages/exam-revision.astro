@@ -1,0 +1,24 @@
+---
+import Base from '../layouts/Base.astro';
+import Offer from '../components/Offer.astro';
+import { courses } from '../content/site.js';
+const c = courses['exam-revision'];
+const cta = c.enrolUrl
+  ? { label: 'Enrol Now', href: c.enrolUrl }
+  : { label: 'Register Your Interest', href: `/contact/?about=${c.slug}`, pending: true };
+---
+<Base title={c.title} description={c.description}>
+  <Offer
+    audience={c.audience}
+    heading={c.heading}
+    lead={c.lead}
+    price={c.price}
+    showPrice
+    cta={cta}
+    stakes={c.stakes}
+    offer={c.learn}
+    steps={c.steps}
+    faqs={c.faqs}
+    closing={c.closing}
+  />
+</Base>

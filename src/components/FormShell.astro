@@ -1,0 +1,16 @@
+---
+// Wraps a form. If no endpoint is configured yet, the form still renders (so the
+// layout is final) but the submit button is disabled and a notice explains why.
+import Draft from './Draft.astro';
+const { action = null, name, notConnected = 'This form is not connected yet.' } = Astro.props;
+---
+<form class="form-shell" action={action ?? undefined} method="post" data-form={name} data-connected={action ? 'true' : 'false'}>
+  <fieldset disabled={!action}>
+    <slot />
+  </fieldset>
+  {!action && <Draft note label={notConnected} />}
+</form>
+<style>
+  fieldset { border: 0; margin: 0; padding: 0; min-width: 0; }
+  fieldset[disabled] :global(.btn) { opacity: 0.55; cursor: not-allowed; transform: none; }
+</style>

@@ -1,0 +1,340 @@
+---
+import Base from '../layouts/Base.astro';
+import PathCards from '../components/PathCards.astro';
+import Steps from '../components/Steps.astro';
+import FormShell from '../components/FormShell.astro';
+import Art from '../components/Art.astro';
+import Draft from '../components/Draft.astro';
+import {
+  site, hero, trust, paths, plan, showcase, leadMagnet, testimonials, closing, primaryCta,
+} from '../content/site.js';
+
+const pad = (n) => String(n).padStart(2, '0');
+const hasTestimonials = testimonials.items.length > 0;
+const showTestimonials = hasTestimonials || site.draft;
+---
+<Base>
+  <!-- 1 · Hero: who it is for, the problem, the promise, one clear action -->
+  <section class="hero section--dark" data-section="hero">
+    <div class="wrap hero__grid">
+      <div class="hero__copy">
+        <p class="eyebrow">{hero.eyebrow}</p>
+        <h1>{hero.heading}</h1>
+        <p class="hero__problem">{hero.problem}</p>
+        <p class="hero__solution">{hero.solution}</p>
+        <div class="hero__actions">
+          <a class="btn" href={primaryCta.href}>{primaryCta.label} <span class="arrow" aria-hidden="true">→</span></a>
+          <a class="btn btn--ghost" href={hero.secondaryCta.href}>{hero.secondaryCta.label}</a>
+        </div>
+      </div>
+      <div class="hero__art" aria-hidden="true">
+        <svg viewBox="0 0 520 460" width="520" height="460">
+          <rect x="24" y="36" width="472" height="388" rx="22" fill="#14273d" stroke="#1e3653" stroke-width="2" />
+          <g stroke="#1e3653" stroke-width="1.5">
+            <line x1="64" y1="340" x2="456" y2="340" /><line x1="64" y1="270" x2="456" y2="270" />
+            <line x1="64" y1="200" x2="456" y2="200" /><line x1="64" y1="130" x2="456" y2="130" />
+          </g>
+          <path class="hero__fill" d="M64 340h98v-70h98v-70h98v-70h98v210H64z" fill="#ffb703" opacity="0.1" />
+          <path class="hero__line" d="M64 340h98v-70h98v-70h98v-70h98" fill="none" stroke="#ffb703" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" pathLength="1" />
+          <g fill="#f6f1e7"><circle cx="113" cy="340" r="7" /><circle cx="211" cy="270" r="7" /><circle cx="309" cy="200" r="7" /></g>
+          <circle cx="456" cy="130" r="15" fill="#ffb703" />
+          <circle cx="456" cy="130" r="26" fill="none" stroke="#ffb703" stroke-width="2" opacity="0.45" />
+          <g font-family="Roboto Variable, Roboto, sans-serif" font-size="15" font-weight="600" fill="#a9b6c7">
+            <text x="113" y="372" text-anchor="middle">Plan</text>
+            <text x="211" y="302" text-anchor="middle">Learn</text>
+            <text x="309" y="232" text-anchor="middle">Remember</text>
+            <text x="407" y="162" text-anchor="middle">Achieve</text>
+          </g>
+          <g transform="translate(56 64)">
+            <rect width="176" height="44" rx="22" fill="#1f8a7d" />
+            <path d="M22 22l7 7 13-14" fill="none" stroke="#f6f1e7" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" />
+            <text x="56" y="28" font-family="Roboto Variable, Roboto, sans-serif" font-size="16" font-weight="700" fill="#f6f1e7">A clear method</text>
+          </g>
+        </svg>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="trust" data-section="trust">
+        <p class="trust__label">{trust.label}</p>
+        <ul class="trust__list">
+          {trust.items.map((t) => <li>{t}</li>)}
+        </ul>
+        <Draft label="Confirm qualifications" />
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 · Paths: three ways to buy, split by who you are -->
+  <section class="section" id="paths" data-section="paths">
+    <div class="wrap">
+      <div class="center section-head">
+        <p class="eyebrow">{paths.eyebrow}</p>
+        <h2>{paths.heading}</h2>
+      </div>
+      <PathCards />
+      <p class="paths__aside">{paths.aside.text} <a href={paths.aside.href}>{paths.aside.label}</a></p>
+    </div>
+  </section>
+
+  <!-- 3 · Plan: three simple steps -->
+  <section class="section section--dark plan" data-section="plan">
+    <div class="wrap">
+      <div class="center section-head">
+        <h2>{plan.heading}</h2>
+      </div>
+      <Steps steps={plan.steps} />
+      <div class="center plan__cta">
+        <a class="btn" href={primaryCta.href}>{primaryCta.label} <span class="arrow" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 · Showcase: numbered tour of everything on offer -->
+  <section class="section showcase" data-section="showcase">
+    <div class="wrap">
+      <div class="showcase__head">
+        <div>
+          <p class="eyebrow">{showcase.eyebrow}</p>
+          <h2>{showcase.heading}</h2>
+          <p class="lede">{showcase.intro}</p>
+        </div>
+        <div class="showcase__controls" hidden>
+          <p class="showcase__count" aria-live="polite"><span data-current>01</span> / {pad(showcase.items.length)}</p>
+          <button class="showcase__arrow" type="button" data-prev aria-label="Previous item">←</button>
+          <button class="showcase__arrow" type="button" data-next aria-label="Next item">→</button>
+        </div>
+      </div>
+
+      <div class="showcase__stage">
+        {showcase.items.map((item, i) => (
+          <article class="showcase__panel card" id={`showcase-panel-${i}`} data-panel={i}>
+            <div class="showcase__art"><Art kind={item.art} /></div>
+            <div class="showcase__body">
+              <p class="showcase__tag"><span>{item.tag}</span> <span class="showcase__num">{pad(i + 1)}</span></p>
+              <h3>{item.title}</h3>
+              <p class="showcase__meta">{item.meta}</p>
+              <p>{item.text}</p>
+              <a class="btn btn--dark" href={item.href}>{item.cta} <span class="arrow" aria-hidden="true">→</span></a>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <ol class="showcase__tabs" hidden>
+        {showcase.items.map((item, i) => (
+          <li>
+            <button type="button" data-tab={i} aria-controls={`showcase-panel-${i}`} aria-pressed={i === 0 ? 'true' : 'false'}>
+              <span class="showcase__tabnum">{pad(i + 1)}</span> {item.tab}
+            </button>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <!-- 5 · Lead magnet: a free guide in exchange for an email address -->
+  <section class="section section--tint lead" id="free-guide" data-section="lead-magnet">
+    <div class="wrap lead__grid">
+      <div class="lead__cover" aria-hidden="true">
+        <div class="guide-cover">
+          <span class="guide-cover__kicker">Free guide</span>
+          <span class="guide-cover__title">{leadMagnet.guideTitle}</span>
+          <span class="guide-cover__sub">{leadMagnet.guideSubtitle}</span>
+          <span class="guide-cover__brand">{site.name}</span>
+        </div>
+      </div>
+      <div>
+        <p class="eyebrow">{leadMagnet.eyebrow}</p>
+        <h2>{leadMagnet.heading}</h2>
+        <p class="lede">{leadMagnet.text}</p>
+        <FormShell action={site.forms.leadMagnetAction} name="lead-magnet" notConnected="Sign-up form not connected to an email provider yet.">
+          <div class="form-row">
+            <div class="field">
+              <label for="lead-email">Email address</label>
+              <input class="input" id="lead-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required />
+            </div>
+            <button class="btn btn--dark" type="submit">{leadMagnet.button}</button>
+          </div>
+        </FormShell>
+        <p class="form-small">No spam. Unsubscribe any time. See our <a href="/privacy/">privacy policy</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 · Testimonials: proof that it works -->
+  {showTestimonials && (
+    <section class="section testimonials" data-section="testimonials">
+      <div class="wrap">
+        <div class="center section-head">
+          <p class="eyebrow">{testimonials.eyebrow}</p>
+          <h2>{testimonials.heading}</h2>
+          <p class="lede">{testimonials.intro}</p>
+        </div>
+        <ul class="grid grid--3">
+          {hasTestimonials
+            ? testimonials.items.map((t) => (
+                <li>
+                  <figure class="card quote">
+                    <p class="quote__group">{t.group}</p>
+                    <blockquote>“{t.quote}”</blockquote>
+                    <figcaption><strong>{t.name}</strong>{t.role && <span>{t.role}</span>}</figcaption>
+                  </figure>
+                </li>
+              ))
+            : testimonials.placeholderGroups.map((g) => (
+                <li>
+                  <figure class="card quote quote--blank" data-testimonial-placeholder>
+                    <p class="quote__group">{g}</p>
+                    <blockquote aria-hidden="true"><span></span><span></span><span></span></blockquote>
+                    <figcaption><Draft label={`${g} testimonial to add`} /></figcaption>
+                  </figure>
+                </li>
+              ))}
+        </ul>
+      </div>
+    </section>
+  )}
+
+  <!-- 7 · Closing: repeat the paths so the last thing on the page is the next step -->
+  <section class="section section--dark closing" data-section="closing">
+    <div class="wrap">
+      <div class="section-head closing__head">
+        <p class="eyebrow">{closing.eyebrow}</p>
+        <h2>{closing.heading}</h2>
+        <p class="lede">{closing.text}</p>
+      </div>
+      <PathCards compact />
+    </div>
+  </section>
+</Base>
+
+<style>
+  .section-head { margin-bottom: clamp(32px, 5vw, 56px); }
+  .section-head h2 { max-width: 22ch; }
+  .center.section-head h2 { margin-inline: auto; }
+
+  /* Hero */
+  .hero { position: relative; padding-top: clamp(48px, 7vw, 96px); overflow: hidden; }
+  .hero::before {
+    content: ''; position: absolute; inset: 0; pointer-events: none;
+    background: radial-gradient(900px 480px at 82% 12%, rgba(31, 138, 125, 0.28), transparent 62%),
+      radial-gradient(700px 420px at 4% 96%, rgba(255, 183, 3, 0.1), transparent 60%);
+  }
+  .hero > .wrap { position: relative; }
+  .hero__grid { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr); gap: clamp(24px, 5vw, 64px); align-items: center; }
+  .hero h1 { max-width: 14ch; }
+  .hero__problem { font-size: clamp(1.15rem, 1.9vw, 1.4rem); font-weight: 500; color: var(--on-ink); max-width: 36ch; }
+  .hero__solution { color: var(--on-ink-muted); max-width: 46ch; font-size: 1.0625rem; }
+  .hero__actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.75rem; }
+  .hero__art svg { width: 100%; height: auto; filter: drop-shadow(0 30px 50px rgba(0, 0, 0, 0.35)); }
+  .hero__line { stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 1.6s 0.2s ease-out forwards; }
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+  @media (prefers-reduced-motion: reduce) { .hero__line { stroke-dashoffset: 0; animation: none; } }
+  @media (max-width: 900px) {
+    .hero__grid { grid-template-columns: 1fr; }
+    .hero__art { max-width: 440px; }
+  }
+
+  .trust {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1.75rem;
+    margin-top: clamp(40px, 6vw, 72px); padding-block: 1.5rem; border-top: 1px solid var(--ink-3);
+  }
+  .trust__label { margin: 0; font-size: 0.8125rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--on-ink-muted); }
+  .trust__list { display: flex; flex-wrap: wrap; gap: 0.5rem 0.75rem; }
+  .trust__list li {
+    font-family: var(--font-display); font-weight: 700; font-size: 1.0625rem; color: var(--on-ink);
+    padding: 0.3rem 0.9rem; border: 1px solid var(--ink-3); border-radius: 999px; background: var(--ink-2);
+  }
+
+  .paths__aside { text-align: center; margin: 2rem 0 0; color: var(--muted); }
+  .paths__aside a { color: var(--teal); font-weight: 700; }
+
+  .plan__cta { margin-top: clamp(32px, 5vw, 56px); }
+
+  /* Showcase */
+  .showcase__head { display: flex; justify-content: space-between; align-items: flex-end; gap: 1.5rem; flex-wrap: wrap; margin-bottom: clamp(24px, 4vw, 40px); }
+  .showcase__head h2 { max-width: 20ch; }
+  .showcase__controls { display: flex; align-items: center; gap: 0.6rem; }
+  .showcase__controls[hidden], .showcase__tabs[hidden] { display: none; }
+  .showcase__count { margin: 0 0.5rem 0 0; font-family: var(--font-display); font-weight: 700; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .showcase__arrow {
+    width: 48px; height: 48px; border-radius: 50%; border: 1.5px solid var(--text); background: none; color: var(--text);
+    font: inherit; font-size: 1.2rem; cursor: pointer; transition: background-color 0.15s ease, color 0.15s ease;
+  }
+  .showcase__arrow:hover { background: var(--ink); color: var(--on-ink); }
+  .showcase__stage { display: grid; gap: 1.5rem; }
+  .showcase__panel { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); padding: 0; overflow: hidden; }
+  .showcase__art { min-height: 300px; background: var(--ink-2); }
+  .showcase__body { padding: clamp(24px, 4vw, 48px); display: flex; flex-direction: column; align-items: flex-start; justify-content: center; }
+  .showcase__tag { display: flex; align-items: center; gap: 0.75rem; font-size: 0.8125rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--teal); margin-bottom: 0.75rem; }
+  .showcase__num { color: #6b7684; font-variant-numeric: tabular-nums; }
+  .showcase__meta { font-weight: 600; margin-bottom: 0.6rem; }
+  .showcase__body p:not(.showcase__tag):not(.showcase__meta) { color: var(--muted); }
+  .showcase__body .btn { margin-top: 0.75rem; }
+  .showcase.is-enhanced .showcase__panel:not(.is-active) { display: none; }
+  .showcase__tabs { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0; margin-top: 1.5rem; border-top: 2px solid var(--line); }
+  .showcase__tabs button {
+    width: 100%; min-height: 56px; text-align: left; padding: 0.9rem 0.5rem 0.9rem 0; margin-top: -2px;
+    background: none; border: 0; border-top: 2px solid transparent; color: var(--muted); font: inherit; font-weight: 600; cursor: pointer;
+  }
+  .showcase__tabs button:hover { color: var(--text); }
+  .showcase__tabs button[aria-pressed='true'] { color: var(--text); border-top-color: var(--accent-deep); }
+  .showcase__tabnum { font-family: var(--font-display); color: var(--teal); margin-right: 0.35rem; font-variant-numeric: tabular-nums; }
+  @media (max-width: 800px) {
+    .showcase__panel { grid-template-columns: 1fr; }
+    .showcase__art { min-height: 0; aspect-ratio: 16 / 9; }
+    .showcase__tabs { grid-template-columns: 1fr 1fr; }
+  }
+
+  /* Lead magnet */
+  .lead__grid { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); gap: clamp(28px, 6vw, 80px); align-items: center; }
+  .lead .lede { margin-bottom: 1.5rem; }
+  .lead__cover { display: grid; place-items: center; }
+  .guide-cover {
+    width: min(100%, 300px); aspect-ratio: 3 / 4; display: flex; flex-direction: column; padding: 1.75rem;
+    background: var(--ink); color: var(--on-ink); border-radius: 6px 14px 14px 6px; border-left: 10px solid var(--accent);
+    box-shadow: 18px 22px 0 -4px var(--teal), var(--shadow); transform: rotate(-3deg);
+  }
+  .guide-cover__kicker { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); }
+  .guide-cover__title { font-family: var(--font-display); font-weight: 800; font-size: 1.9rem; line-height: 1.08; margin-top: 1rem; }
+  .guide-cover__sub { color: var(--on-ink-muted); margin-top: 0.75rem; font-size: 0.9375rem; }
+  .guide-cover__brand { margin-top: auto; font-family: var(--font-display); font-weight: 700; font-size: 0.875rem; }
+  @media (max-width: 800px) { .lead__grid { grid-template-columns: 1fr; } .guide-cover { width: 220px; } }
+
+  /* Testimonials */
+  .quote { margin: 0; height: 100%; display: flex; flex-direction: column; }
+  .quote__group { font-size: 0.8125rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--teal); }
+  .quote blockquote { margin: 0 0 1.25rem; font-family: var(--font-display); font-size: 1.125rem; line-height: 1.45; flex: 1; }
+  .quote figcaption { display: grid; gap: 0.15rem; font-size: 0.9375rem; }
+  .quote figcaption span:not(.draft-tag) { color: var(--muted); }
+  .quote--blank { border-style: dashed; box-shadow: none; background: transparent; }
+  .quote--blank blockquote { display: grid; gap: 0.7rem; align-content: start; }
+  .quote--blank blockquote span { height: 0.8rem; border-radius: 4px; background: var(--line); }
+  .quote--blank blockquote span:last-child { width: 60%; }
+
+  .closing__head h2 { max-width: 20ch; }
+</style>
+
+<script is:inline>
+  (function () {
+    var root = document.querySelector('.showcase');
+    if (!root) return;
+    var panels = root.querySelectorAll('[data-panel]');
+    var tabs = root.querySelectorAll('[data-tab]');
+    var current = root.querySelector('[data-current]');
+    var index = 0;
+    function show(i) {
+      index = (i + panels.length) % panels.length;
+      panels.forEach(function (p, n) { p.classList.toggle('is-active', n === index); });
+      tabs.forEach(function (t, n) { t.setAttribute('aria-pressed', String(n === index)); });
+      current.textContent = String(index + 1).padStart(2, '0');
+    }
+    root.classList.add('is-enhanced');
+    root.querySelector('.showcase__controls').hidden = false;
+    root.querySelector('.showcase__tabs').hidden = false;
+    tabs.forEach(function (t, n) { t.addEventListener('click', function () { show(n); }); });
+    root.querySelector('[data-prev]').addEventListener('click', function () { show(index - 1); });
+    root.querySelector('[data-next]').addEventListener('click', function () { show(index + 1); });
+    show(0);
+  })();
+</script>

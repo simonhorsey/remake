@@ -1,0 +1,49 @@
+---
+import Logo from './Logo.astro';
+import Draft from './Draft.astro';
+import { footer, site } from '../content/site.js';
+const year = new Date().getFullYear();
+---
+<footer class="site-footer" data-section="footer">
+  <div class="wrap">
+    <div class="site-footer__top">
+      <div class="site-footer__brand">
+        <Logo />
+        <p>{footer.tagline}</p>
+        {site.social.length > 0
+          ? <ul class="site-footer__social">{site.social.map((s) => <li><a href={s.href} rel="noopener">{s.label}</a></li>)}</ul>
+          : <Draft label="Social links to add" />}
+      </div>
+      {footer.columns.map((col) => (
+        <nav aria-label={col.label}>
+          <h2 class="site-footer__label">{col.label}</h2>
+          <ul>
+            {col.links.map((l) => <li><a href={l.href} rel={l.href.startsWith('http') ? 'noopener' : undefined}>{l.label}</a></li>)}
+          </ul>
+        </nav>
+      ))}
+    </div>
+    <div class="site-footer__base">
+      <p>© {year} {site.name} · {footer.owner}. All rights reserved.</p>
+      <ul class="site-footer__legal">
+        {footer.legal.map((l) => <li><a href={l.href}>{l.label}</a></li>)}
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer { background: var(--ink); color: var(--on-ink); padding-block: clamp(48px, 6vw, 80px) 28px; border-top: 1px solid var(--ink-3); }
+  .site-footer__top { display: grid; grid-template-columns: 1.6fr repeat(3, 1fr); gap: 2rem; }
+  .site-footer__brand p { color: var(--on-ink-muted); margin: 1rem 0; max-width: 30ch; }
+  .site-footer__label { font-family: var(--font-body); font-size: 0.8125rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.9rem; }
+  .site-footer a { text-decoration: none; color: var(--on-ink); }
+  .site-footer nav a, .site-footer__legal a { display: inline-block; padding: 0.35rem 0; color: var(--on-ink-muted); }
+  .site-footer a:hover { color: var(--accent); }
+  .site-footer__social { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .site-footer__base { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.5rem 2rem; margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--ink-3); font-size: 0.875rem; color: var(--on-ink-muted); }
+  .site-footer__base p { margin: 0; }
+  .site-footer__legal { display: flex; gap: 1.5rem; }
+  @media (max-width: 860px) { .site-footer__top { grid-template-columns: 1fr 1fr; } .site-footer__brand { grid-column: 1 / -1; } }
+  @media (max-width: 480px) { .site-footer__top { grid-template-columns: 1fr; } }
+</style>

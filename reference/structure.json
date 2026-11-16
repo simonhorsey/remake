@@ -1,0 +1,16 @@
+{
+  "source": "https://www.storybrand.com (home page), read 2026-11-16",
+  "note": "Our own description of the page's section pattern. No copy, images, fonts or code from the source are stored or reused. The shingle hashes in shingles.json are one-way fingerprints used only to prove our wording does not overlap theirs.",
+  "sections": [
+    { "id": "header", "pattern": "Sticky header: logo, grouped dropdown navigation where each link has a one-line descriptor, one primary call-to-action button." },
+    { "id": "hero", "pattern": "Dark hero: eyebrow, single H1 promise, a line naming the problem, a line giving the solution, primary button that jumps to the paths." },
+    { "id": "trust", "pattern": "Trust strip directly under the hero copy: short label followed by a row of names." },
+    { "id": "paths", "pattern": "Three offer cards split by audience. Each has: who it is for, offer name, short description, price line, call-to-action. A one-line aside for a fourth audience follows." },
+    { "id": "plan", "pattern": "Dark section: H2 and three numbered steps, then the primary button again." },
+    { "id": "showcase", "pattern": "Numbered showcase of everything on offer: one item visible at a time with image, category tag, number, title, text and button; counter, previous/next arrows and a numbered tab list." },
+    { "id": "lead-magnet", "pattern": "Free download: cover image, H2, short pitch and an email sign-up." },
+    { "id": "testimonials", "pattern": "Proof: H2, intro line and a grid of quote cards labelled by customer type." },
+    { "id": "closing", "pattern": "Dark closing section: 'next step' eyebrow, H2, and the same three paths in a compact form." },
+    { "id": "footer", "pattern": "Footer: logo, link columns, legal links, copyright line." }
+  ]
+}

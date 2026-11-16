@@ -1,0 +1,49 @@
+---
+import Base from '../layouts/Base.astro';
+import FormShell from '../components/FormShell.astro';
+import Draft from '../components/Draft.astro';
+import { site, leadMagnet } from '../content/site.js';
+---
+<Base title={`${leadMagnet.guideTitle} | ${site.name}`} description={leadMagnet.text}>
+  <section class="page-hero" data-section="hero">
+    <div class="wrap guide__grid">
+      <div>
+        <p class="eyebrow" style="color: var(--accent)">{leadMagnet.eyebrow}</p>
+        <h1>{leadMagnet.heading}</h1>
+        <p class="lede">{leadMagnet.text}</p>
+        <div class="guide__form">
+          <FormShell action={site.forms.leadMagnetAction} name="lead-magnet" notConnected="Sign-up form not connected to an email provider yet.">
+            <div class="form-row">
+              <div class="field">
+                <label for="guide-email">Email address</label>
+                <input class="input" id="guide-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required />
+              </div>
+              <button class="btn" type="submit">{leadMagnet.button}</button>
+            </div>
+          </FormShell>
+          <p class="form-small">No spam. Unsubscribe any time. See our <a href="/privacy/">privacy policy</a>.</p>
+        </div>
+        <Draft note label={leadMagnet.needsReview} />
+      </div>
+      <ul class="ticks guide__list">
+        <li>Spot the revision habits that feel productive and are not</li>
+        <li>Swap them for simple techniques that make knowledge stay put</li>
+        <li>Know what to do the next time you sit down to revise</li>
+      </ul>
+    </div>
+  </section>
+  <section class="section center" data-section="closing">
+    <div class="wrap">
+      <h2>Ready for the Full Method?</h2>
+      <p class="lede">The guide gets you started. The courses take you the rest of the way.</p>
+      <p><a class="btn btn--dark" href="/#paths">Choose Your Course <span class="arrow" aria-hidden="true">→</span></a></p>
+    </div>
+  </section>
+</Base>
+<style>
+  .guide__grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr); gap: clamp(28px, 6vw, 72px); align-items: center; }
+  .guide__form { margin-top: 1.75rem; max-width: 560px; }
+  .guide__list { background: var(--ink-2); border: 1px solid var(--ink-3); border-radius: var(--radius); padding: clamp(22px, 3vw, 32px); }
+  .guide__list li:last-child { margin-bottom: 0; }
+  @media (max-width: 800px) { .guide__grid { grid-template-columns: 1fr; } }
+</style>

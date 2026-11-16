@@ -1,0 +1,12 @@
+---
+const { steps, level = 'h3' } = Astro.props;
+const H = level;
+---
+<ol class="grid grid--3 steps">
+  {steps.map((s, i) => (
+    <li class="step">
+      <H><span class="sr-only">Step {i + 1}: </span>{s.title}</H>
+      <p>{s.text}</p>
+    </li>
+  ))}
+</ol>

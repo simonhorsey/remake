@@ -1,0 +1,41 @@
+---
+import Base from '../layouts/Base.astro';
+import Draft from '../components/Draft.astro';
+import { about } from '../content/site.js';
+---
+<Base title={about.title} description={about.description}>
+  <section class="page-hero" data-section="hero">
+    <div class="wrap">
+      <p class="eyebrow" style="color: var(--accent)">Meet Your Guide</p>
+      <h1 style="max-width: 24ch">{about.heading}</h1>
+      <p class="lede">{about.lead}</p>
+    </div>
+  </section>
+  <section class="section" data-section="guide">
+    <div class="wrap grid grid--2 about__grid">
+      <div class="prose">
+        {about.body.map((p) => <p>{p}</p>)}
+        <Draft note label={about.needsReview} />
+      </div>
+      <aside>
+        <div class="about__photo" data-placeholder="Photo of Simon to add">
+          <Draft label="Photo of Simon to add" />
+        </div>
+        <ul class="ticks card">
+          {about.credentials.map((c) => <li>{c}</li>)}
+        </ul>
+      </aside>
+    </div>
+  </section>
+  <section class="section section--dark center" data-section="closing">
+    <div class="wrap">
+      <h2>Learn the Method Simon Teaches</h2>
+      <a class="btn" href="/#paths">Choose Your Course <span class="arrow" aria-hidden="true">→</span></a>
+    </div>
+  </section>
+</Base>
+<style>
+  .about__grid { align-items: start; gap: clamp(28px, 6vw, 72px); }
+  .about__photo { aspect-ratio: 4 / 3; border-radius: var(--radius); border: 2px dashed var(--line); background: var(--paper-2); display: grid; place-items: center; margin-bottom: 1.25rem; }
+  ul.card li:last-child { margin-bottom: 0; }
+</style>

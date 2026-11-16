@@ -1,0 +1,18 @@
+---
+import Price from './Price.astro';
+import { paths } from '../content/site.js';
+const { compact = false } = Astro.props;
+---
+<ul class="grid grid--3 path-cards">
+  {paths.items.map((p) => (
+    <li>
+      <article class:list={['card', 'path', { 'path--compact': compact }]} data-path={p.slug}>
+        <p class="path__audience">{p.audience}</p>
+        <h3>{p.title}</h3>
+        <p class="path__text">{compact ? p.short : p.text}</p>
+        <Price label={p.priceLabel} value={p.price} />
+        <a class:list={['btn', 'btn--block', { 'btn--dark': !compact }]} href={p.href}>{p.cta} <span class="arrow" aria-hidden="true">→</span></a>
+      </article>
+    </li>
+  ))}
+</ul>
