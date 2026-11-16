@@ -1,10 +1,10 @@
 # Remake report
 
-**REMAKE COMPLETE** — 42 of 42 checks passed.
+**REMAKE COMPLETE** — 43 of 43 checks passed.
 
 - Reference pattern: https://www.storybrand.com (home page), read 2026-11-16
 - Built site: 10 pages for https://www.learning-for-success.com
-- Generated: 2026-11-16 07:30 UTC by `npm run report`
+- Generated: 2026-11-16 07:46 UTC by `npm run report`
 
 This report is written by `scripts/remake-report.cjs`, which loads every built page in a real browser. The verdict covers the build. Content still waiting on the site owner is listed at the end and does not affect it.
 
@@ -76,6 +76,7 @@ This report is written by `scripts/remake-report.cjs`, which loads every built p
 | ✅ | Title, description, canonical address and sharing tags on every page |  |
 | ✅ | Sitemap lists every page on the www address |  |
 | ✅ | robots.txt present and points at the sitemap on the www address |  |
+| ✅ | Free guide PDF is published at the address the sign-up email will link to | /downloads/quick-wins-study-guide.pdf |
 | ✅ | Favicon and 1200×630 sharing image present |  |
 
 ## H · Ready for Cloudflare
@@ -100,11 +101,10 @@ This report is written by `scripts/remake-report.cjs`, which loads every built p
 |---|---|---|
 | ✅ | No browser console errors on any page |  |
 
-## Waiting on the site owner (17)
+## Waiting on the site owner (14)
 
 Each of these shows a red "Draft" tag on the page. They are blanks, not invented content. Fill them in `src/content/site.js`.
 
-- Price to confirm — /, /exam-revision/, /gradeboost/
 - Sign-up form not connected to an email provider yet. — /, /free-guide/
 - Student testimonial to add — /
 - Parent testimonial to add — /
@@ -114,10 +114,8 @@ Each of these shows a red "Draft" tag on the page. They are blanks, not invented
 - Photo of Simon to add — /about/
 - Contact form not connected yet — add an endpoint in src/content/site.js. — /contact/
 - Contact email to add — /contact/
-- Checkout not connected yet, so this button goes to the contact page. — /exam-revision/, /gradeboost/
-- These come from your slides — confirm each one is still part of the course. — /exam-revision/, /gradeboost/
-- Answer to add — /exam-revision/, /gradeboost/
-- The slides show no free guide yet. Confirm you want one (title, PDF) and connect the sign-up form to your email provider. — /free-guide/
+- These come from your slides — confirm each one will be part of the finished course. — /exam-revision/, /gradeboost/
+- The guide is drafted in your name — read it through, then connect this form to your email provider so sign-ups receive it. — /free-guide/
 - Privacy Policy text to be supplied before launch. This page is a holder so the footer link works. — /privacy/
 - Draft offer — confirm what the schools package includes. — /schools/
 - Terms of Use text to be supplied before launch. This page is a holder so the footer link works. — /terms/

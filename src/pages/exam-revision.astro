@@ -5,7 +5,7 @@ import { courses } from '../content/site.js';
 const c = courses['exam-revision'];
 const cta = c.enrolUrl
   ? { label: 'Enrol Now', href: c.enrolUrl }
-  : { label: 'Register Your Interest', href: `/contact/?about=${c.slug}`, pending: true };
+  : { label: 'Join the Waiting List', href: `/contact/?about=${c.slug}`, soon: true };
 ---
 <Base title={c.title} description={c.description}>
   <Offer
@@ -13,7 +13,7 @@ const cta = c.enrolUrl
     heading={c.heading}
     lead={c.lead}
     price={c.price}
-    showPrice
+    showPrice={Boolean(c.enrolUrl)}
     cta={cta}
     stakes={c.stakes}
     offer={c.learn}

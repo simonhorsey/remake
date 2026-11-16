@@ -27,6 +27,18 @@ npm install
 npm run dev
 ```
 
+## The free guide
+
+The lead-magnet PDF is written in `guide/guide.html`. After editing it, rebuild
+the PDF with:
+
+```bash
+npm run guide
+```
+
+It is saved to `public/downloads/quick-wins-study-guide.pdf`. Link to that
+address from the welcome email your email provider sends to new sign-ups.
+
 ## Check it
 
 ```bash
@@ -79,5 +91,6 @@ The current Sitejet site stops being served at that address once DNS changes.
 | `src/pages/` | One file per page |
 | `src/components/` | Header, footer, path cards, forms, artwork |
 | `src/styles/global.css` | Colours, type and shared styles |
+| `guide/guide.html` | The free guide, built into a PDF by `npm run guide` |
 | `reference/` | Our description of the reference pattern, plus one-way text fingerprints |
 | `scripts/remake-report.cjs` | The audit behind `npm run report` |

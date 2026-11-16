@@ -64,7 +64,7 @@ function listPages() {
 
 (async () => {
   if (!fs.existsSync(path.join(DIST, 'index.html'))) { console.error('No build found. Run: npm run build'); process.exit(2); }
-  const { site } = await import(require('url').pathToFileURL(path.join(ROOT, 'src', 'content', 'site.js')).href);
+  const { site, leadMagnet } = await import(require('url').pathToFileURL(path.join(ROOT, 'src', 'content', 'site.js')).href);
   SITE_HOST = new URL(site.url).host;
   const server = await serve();
   const base = `http://127.0.0.1:${server.address().port}`;
@@ -338,6 +338,8 @@ function listPages() {
     check(G, 'Sitemap lists every page on the www address', fs.existsSync(sm[0]) && mustList.every((p) => smText.includes(`https://${SITE_HOST}${p}`)));
     const robots = fs.existsSync(path.join(DIST, 'robots.txt')) ? fs.readFileSync(path.join(DIST, 'robots.txt'), 'utf8') : '';
     check(G, 'robots.txt present and points at the sitemap on the www address', robots.includes(`https://${SITE_HOST}/sitemap-index.xml`));
+    const pdf = path.join(DIST, leadMagnet.pdfUrl);
+    check(G, 'Free guide PDF is published at the address the sign-up email will link to', fs.existsSync(pdf) && fs.readFileSync(pdf).subarray(0, 5).toString() === '%PDF-', leadMagnet.pdfUrl);
     const og = path.join(DIST, 'og.png');
     check(G, 'Favicon and 1200×630 sharing image present', fs.existsSync(path.join(DIST, 'favicon.svg')) && fs.existsSync(og) && fs.readFileSync(og).readUInt32BE(16) === 1200 && fs.readFileSync(og).readUInt32BE(20) === 630);
   }

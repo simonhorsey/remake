@@ -4,12 +4,12 @@ import FormShell from '../components/FormShell.astro';
 import Draft from '../components/Draft.astro';
 import { site } from '../content/site.js';
 ---
-<Base title={`Contact | ${site.name}`} description="Ask a question about GradeBoost, ExamX Revision or bringing Essentials for Learning to your school.">
+<Base title={`Contact | ${site.name}`} description="Ask a question, join the waiting list for GradeBoost or ExamX Revision, or talk to us about your school.">
   <section class="page-hero" data-section="hero">
     <div class="wrap">
       <p class="eyebrow" style="color: var(--accent)">Contact</p>
-      <h1>Ask a Question. Get a Straight Answer.</h1>
-      <p class="lede">Tell us what you need and we will point you to the right course.</p>
+      <h1>Ask a Question or Join the Waiting List</h1>
+      <p class="lede">Ask anything, or join the waiting list for a course and we will tell you the moment it opens.</p>
     </div>
   </section>
   <section class="section" data-section="contact">
@@ -28,8 +28,8 @@ import { site } from '../content/site.js';
             <label for="c-about">What is it about?</label>
             <select class="input" id="c-about" name="about">
               <option value="general">A general question</option>
-              <option value="gradeboost">GradeBoost</option>
-              <option value="exam-revision">ExamX Revision</option>
+              <option value="gradeboost">GradeBoost waiting list</option>
+              <option value="exam-revision">ExamX Revision waiting list</option>
               <option value="schools">Essentials for Learning in my school</option>
             </select>
           </div>

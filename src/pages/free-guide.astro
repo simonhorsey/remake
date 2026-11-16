@@ -4,7 +4,7 @@ import FormShell from '../components/FormShell.astro';
 import Draft from '../components/Draft.astro';
 import { site, leadMagnet } from '../content/site.js';
 ---
-<Base title={`${leadMagnet.guideTitle} | ${site.name}`} description={leadMagnet.text}>
+<Base title={`${leadMagnet.guideTitle}: A Free Study Guide | ${site.name}`} description={leadMagnet.text}>
   <section class="page-hero" data-section="hero">
     <div class="wrap guide__grid">
       <div>
@@ -26,9 +26,7 @@ import { site, leadMagnet } from '../content/site.js';
         <Draft note label={leadMagnet.needsReview} />
       </div>
       <ul class="ticks guide__list">
-        <li>Why highlighting fools your brain into thinking it knows something</li>
-        <li>Read, close, write: the three-step summary that makes you recall</li>
-        <li>The 25-minute timer that gets you started when you would rather not</li>
+        {leadMagnet.points.map((pt) => <li>{pt}</li>)}
       </ul>
     </div>
   </section>

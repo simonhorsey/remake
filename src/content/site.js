@@ -15,7 +15,7 @@ export const site = {
   url: 'https://www.learning-for-success.com',
   title: 'LearningForSuccess | Learn How to Learn. Watch Your Grades Follow.',
   description:
-    'Study skills and exam revision courses that show students exactly how to learn, so the effort they put in shows up in their grades.',
+    'Study skills and exam revision courses for the age of AI: learn how to understand, remember and think for yourself, and watch your grades follow.',
   locale: 'en-GB',
 
   // Where the forms send to. null = not connected yet (form shows a notice).
@@ -45,7 +45,7 @@ export const nav = [
   {
     label: 'Resources',
     items: [
-      { label: 'Free Revision Guide', note: 'Start revising smarter tonight', href: '/free-guide/' },
+      { label: 'Free Quick Wins Guide', note: 'Five techniques to use tonight', href: '/free-guide/' },
       { label: 'Meet Your Guide', note: 'The teacher behind the courses', href: '/about/' },
       { label: 'Contact', note: 'Ask a question', href: '/contact/' },
     ],
@@ -59,9 +59,9 @@ export const hero = {
   eyebrow: 'Essentials for Learning',
   heading: 'Learn How to Learn. Then Watch Your Grades Follow.',
   problem:
-    'Reading the chapter again and highlighting half the page feels like revision. It is not — and that is why your grades never quite match the hours you put in.',
+    'AI can hand you an answer in seconds. It cannot understand it, remember it or judge it for you — and in the exam hall, that part is all yours.',
   solution:
-    'Our courses teach you the techniques that work, from active recall to a revision plan you will stick to. Your results improve and, over time, you end up doing less work.',
+    'Our courses teach the techniques that build real knowledge, from active recall to a revision plan you will stick to. It takes effort. The effort is where the learning happens.',
   secondaryCta: { label: 'Get the Free Guide', href: '/free-guide/' },
 };
 
@@ -81,8 +81,8 @@ export const paths = {
       audience: 'For students who want better grades all year',
       title: 'GradeBoost',
       text: 'Seven units that take you from note-taking to memory to beating procrastination. Take one a week and build habits that last through school and beyond.',
-      price: null, // e.g. '£49'
-      priceLabel: 'Course fee',
+      price: 'Opening soon',
+      priceLabel: 'Enrolment',
       cta: 'Explore GradeBoost',
       short: 'Build the study habits that lift your grades in every subject.',
       href: '/gradeboost/',
@@ -92,8 +92,8 @@ export const paths = {
       audience: 'For students with exams on the way',
       title: 'ExamX Revision',
       text: 'Work out which subjects need you most, build a revision plan that survives real life, and use the quick-win techniques that make knowledge stick.',
-      price: null,
-      priceLabel: 'Course fee',
+      price: 'Opening soon',
+      priceLabel: 'Enrolment',
       cta: 'Explore ExamX Revision',
       short: 'Turn the weeks before your exams into a plan you can follow.',
       href: '/exam-revision/',
@@ -110,7 +110,7 @@ export const paths = {
       href: '/schools/',
     },
   ],
-  aside: { text: 'Not sure where to start?', label: 'Get the free revision guide', href: '/free-guide/' },
+  aside: { text: 'Not sure where to start?', label: 'Get the free Quick Wins guide', href: '/free-guide/' },
 };
 
 // ── Home: the plan ──────────────────────────────────────────────────────────
@@ -119,7 +119,7 @@ export const plan = {
   steps: [
     {
       title: 'Choose Your Course',
-      text: 'Pick GradeBoost to build study skills for the long run, or ExamX Revision when exams are getting close.',
+      text: 'Pick GradeBoost to build study skills for the long run, or ExamX Revision when exams are getting close. Start today with the free guide.',
     },
     {
       title: 'Learn the Method',
@@ -161,9 +161,9 @@ export const showcase = {
     {
       tag: 'Free Download',
       tab: 'Free Guide',
-      title: 'The Free Revision Guide',
-      meta: 'A short read you can use tonight',
-      text: 'Why highlighters fool you, how to summarise in three steps, and how a 25-minute timer gets you started. Yours free.',
+      title: 'Quick Wins: Five Study Techniques AI Cannot Do for You',
+      meta: 'A nine-page guide you can use tonight',
+      text: 'Why highlighters fool you, how to summarise in three steps, the SQ3R reading method, the 25-minute timer and how to sit a past paper properly. Yours free.',
       cta: 'Get the Free Guide',
       href: '/free-guide/',
       art: 'guide',
@@ -194,12 +194,22 @@ export const showcase = {
 // ── Home: lead magnet ───────────────────────────────────────────────────────
 export const leadMagnet = {
   eyebrow: 'Free Download',
-  heading: 'Start Revising Smarter Tonight. A Free Guide.',
-  text: 'Three quick wins from the courses that you can use this evening. Enter your email and the guide is yours.',
+  heading: 'Five Study Techniques AI Cannot Do for You. A Free Guide.',
+  text: 'AI can serve up an answer. Only you can learn it. Get five quick wins from the courses that make your brain do the work — and start tonight.',
   button: 'Send Me the Guide',
-  guideTitle: 'The Free Revision Guide',
-  guideSubtitle: 'Three quick wins you can use tonight',
-  needsReview: 'The slides show no free guide yet. Confirm you want one (title, PDF) and connect the sign-up form to your email provider.',
+  guideTitle: 'Quick Wins',
+  guideSubtitle: 'Five study techniques AI cannot do for you',
+  // The PDF is built from guide/guide.html with `npm run guide`. Link to this
+  // address from the welcome email your email provider sends.
+  pdfUrl: '/downloads/quick-wins-study-guide.pdf',
+  points: [
+    'Put the highlighter down, and what to do with your pen instead',
+    'Read, close, write: the three-step summary that makes you recall',
+    'SQ3R: how to read a chapter so it stays read',
+    'The 25-minute timer that gets you started when you would rather not',
+    'How to sit a past paper so it shows you what to revise next',
+  ],
+  needsReview: 'The guide is drafted in your name — read it through, then connect this form to your email provider so sign-ups receive it.',
 };
 
 // ── Home: testimonials ──────────────────────────────────────────────────────
@@ -235,7 +245,7 @@ export const courses = {
     heading: 'Learn the Techniques Once. Use Them in Every Subject.',
     lead: 'Reading the chapter and thinking you have learned it will not cut it. GradeBoost gives you seven units of techniques that do — and over time you end up doing less work, because your technique is good.',
     price: null,
-    enrolUrl: null,
+    enrolUrl: null, // add the checkout link here when the course opens
     stakes: {
       heading: 'Hard Work With Poor Technique Is Wasted Work',
       text: 'Ever wonder why some students seem to have more free time than you, with the same amount to study? They are not cleverer. They have better habits.',
@@ -264,10 +274,10 @@ export const courses = {
         'Downloads such as the procrastination log',
         'A private group for sharing what is working',
       ],
-      includesReview: 'These come from your slides — confirm each one is still part of the course.',
+      includesReview: 'These come from your slides — confirm each one will be part of the finished course.',
     },
     steps: [
-      { title: 'Join the Course', text: 'Sign up and get the lessons, quizzes and downloads in one place.' },
+      { title: 'Join the Waiting List', text: 'The course opens soon. Add your name and you will hear first.' },
       { title: 'Take One Unit a Week', text: 'Watch the lesson, then spend the week using the technique on your own school work.' },
       { title: 'Use It Everywhere', text: 'Carry each technique into every subject, and build a streak you will not want to break.' },
     ],
@@ -275,7 +285,7 @@ export const courses = {
       { q: 'Who is GradeBoost for?', a: 'Students who work hard and want that work to show in their grades. The techniques apply to any subject, with examples from maths, science, history and languages.' },
       { q: 'How much time does it take?', a: 'There are seven units. Spend a week on each one: learn the technique, then practise it on your real school work until it becomes a habit.' },
       { q: 'My exams are only a few weeks away. Is this the right course?', a: 'Start with ExamX Revision, which is built for the run-up to exams. Come back to GradeBoost afterwards and you should never be in that position again.' },
-      { q: 'How do I get access?', a: null },
+      { q: 'How do I get access?', a: 'GradeBoost is being finished now. Join the waiting list and you will be among the first to know when it opens.' },
     ],
     closing: 'Good Technique Beats Long Hours',
   },
@@ -290,7 +300,7 @@ export const courses = {
     heading: 'Walk Into Your Exams Knowing You Are Ready',
     lead: 'Not every subject needs the same amount of revision. ExamX Revision shows you where your time should go, then gives you the techniques to make every session count.',
     price: null,
-    enrolUrl: null,
+    enrolUrl: null, // add the checkout link here when the course opens
     stakes: {
       heading: 'A Timetable Is Not a Plan',
       text: 'Most revision timetables collapse the first time football runs to extra time. Then it feels like there is no point starting at all.',
@@ -318,10 +328,10 @@ export const courses = {
         'Spreadsheet templates for your revision plan and tracker',
         'Worked examples from history, science, maths and languages',
       ],
-      includesReview: 'These come from your slides — confirm each one is still part of the course.',
+      includesReview: 'These come from your slides — confirm each one will be part of the finished course.',
     },
     steps: [
-      { title: 'Join the Course', text: 'Sign up and get the lessons and templates straight away.' },
+      { title: 'Join the Waiting List', text: 'The course opens soon. Add your name and you will hear first.' },
       { title: 'Build Your Plan', text: 'Prioritise your subjects, break them into topics and set your revision times.' },
       { title: 'Follow It to Exam Day', text: 'Show up each day, track what you cover, and let consistency do what motivation cannot.' },
     ],
@@ -329,7 +339,7 @@ export const courses = {
       { q: 'When should I start?', a: 'As soon as you know your exam dates. The earlier you start, the lighter each week feels — and the more times you can review each topic.' },
       { q: 'Which exams does it work for?', a: 'Any exam where you need to understand and recall what you have been taught. The examples come from subjects such as history, science, maths and languages.' },
       { q: 'What is the single most important technique?', a: 'Active recall: closing the book and bringing the information back from memory. It takes more effort than rereading, and that effort is what makes it work.' },
-      { q: 'How do I get access?', a: null },
+      { q: 'How do I get access?', a: 'ExamX Revision is being finished now. Join the waiting list and you will be among the first to know when it opens.' },
     ],
     closing: 'Consistency Beats Motivation. Start Today.',
   },
@@ -379,7 +389,8 @@ export const about = {
   body: [
     'I am Simon Horsey. I am Head of Arts and Technology at a British international school, and I have seen the same pattern in classroom after classroom: students told to "go and revise" with no idea what that means.',
     'My background is in music, where everyone knows that how you practise matters more than how long. I wrote Practice Makes Perfect: The Keys to Success on Any Musical Instrument about exactly that. Essentials for Learning takes the same idea and applies it to every subject.',
-    'The courses here are short, practical and built for real students with real timetables. Learn the method once, and you can use it for the rest of your education.',
+    'It matters more now than it ever has. AI is an amazing tool, but the more answers are served up to us, the more we need knowledge of our own: to check what we are told, to think critically and to be creative. That takes productive struggle, and these courses show you how to struggle well.',
+    'The courses are short, practical and built for real students with real timetables. Learn the techniques once, and you can use them for the rest of your education.',
   ],
   credentials: [
     'Head of Arts and Technology at a British international school',
@@ -404,7 +415,7 @@ export const footer = {
     {
       label: 'Resources',
       links: [
-        { label: 'Free Revision Guide', href: '/free-guide/' },
+        { label: 'Free Quick Wins Guide', href: '/free-guide/' },
         { label: 'Meet Your Guide', href: '/about/' },
         { label: 'Contact', href: '/contact/' },
       ],

@@ -8,7 +8,8 @@
     "build": "astro build",
     "preview": "astro preview",
     "report": "astro build && node scripts/remake-report.cjs",
-    "deploy": "astro build && wrangler deploy"
+    "deploy": "astro build && wrangler deploy",
+    "guide": "node scripts/make-guide.cjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.5",

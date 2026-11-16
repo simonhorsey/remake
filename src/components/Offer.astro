@@ -14,11 +14,11 @@ const visibleFaqs = faqs.filter((f) => f.a || site.draft);
     <p class="lede">{lead}</p>
     <div class="page-hero__actions">
       <a class="btn" href={cta.href}>{cta.label} <span class="arrow" aria-hidden="true">→</span></a>
+      {cta.soon && <p class="page-hero__price"><strong>Opening soon.</strong> Join the list to hear first.</p>}
       {showPrice && (price || site.draft) && (
         <p class="page-hero__price">Course fee: {price ? <strong>{price}</strong> : <Draft label="Price to confirm" />}</p>
       )}
     </div>
-    {cta.pending && <Draft note label="Checkout not connected yet, so this button goes to the contact page." />}
   </div>
 </section>
 

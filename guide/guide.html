@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8" />
+<title>Quick Wins: Five Study Techniques AI Can’t Do for You</title>
+<meta name="author" content="Simon Horsey" />
+<meta name="description" content="A free guide from LearningForSuccess: five study techniques that make your brain do the work." />
+<style>
+  @font-face { font-family: 'Roboto'; src: url('../node_modules/@fontsource-variable/roboto/files/roboto-latin-wght-normal.woff2') format('woff2'); font-weight: 100 900; font-style: normal; }
+  @font-face { font-family: 'Roboto'; src: url('../node_modules/@fontsource-variable/roboto/files/roboto-latin-wght-italic.woff2') format('woff2'); font-weight: 100 900; font-style: italic; }
+  @font-face { font-family: 'Roboto Slab'; src: url('../node_modules/@fontsource-variable/roboto-slab/files/roboto-slab-latin-wght-normal.woff2') format('woff2'); font-weight: 100 900; }
+
+  :root { --ink: #0d1b2a; --ink-2: #14273d; --ink-3: #1e3653; --paper: #fbf8f2; --paper-2: #f3ede2; --line: #e4dccd; --text: #1a2330; --muted: #566273; --accent: #ffb703; --teal: #16746a; --teal-soft: #d9efe9; --on-ink: #f6f1e7; --on-ink-muted: #a9b6c7; }
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { font-family: 'Roboto', 'Helvetica Neue', Helvetica, sans-serif; color: var(--text); font-size: 11.5pt; line-height: 1.55; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  h1, h2, h3 { font-family: 'Roboto Slab', Georgia, serif; font-weight: 700; line-height: 1.12; letter-spacing: -0.01em; margin: 0; }
+  p { margin: 0 0 3.2mm; }
+  strong { font-weight: 700; }
+
+  .page { width: 210mm; height: 297mm; padding: 22mm 22mm 24mm; position: relative; overflow: hidden; page-break-after: always; background: var(--paper); }
+  .page:last-child { page-break-after: auto; }
+  .footer { position: absolute; left: 22mm; right: 22mm; bottom: 11mm; display: flex; justify-content: space-between; font-size: 8.5pt; color: var(--muted); border-top: 0.3mm solid var(--line); padding-top: 3mm; }
+  .footer b { font-family: 'Roboto Slab', serif; color: var(--text); }
+  .eyebrow { font-size: 8.5pt; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--teal); margin-bottom: 4mm; }
+
+  /* Cover */
+  .cover { background: var(--ink); color: var(--on-ink); padding: 24mm 22mm; display: flex; flex-direction: column; }
+  .cover::before { content: ''; position: absolute; inset: 0; background: radial-gradient(160mm 110mm at 85% 12%, rgba(31, 138, 125, 0.32), transparent 62%), radial-gradient(120mm 90mm at 0% 100%, rgba(255, 183, 3, 0.12), transparent 60%); }
+  .cover > * { position: relative; }
+  .brand { display: flex; align-items: center; gap: 3.5mm; font-family: 'Roboto Slab', serif; font-size: 15pt; }
+  .brand b { font-weight: 800; }
+  .cover .eyebrow { color: var(--accent); margin-top: 38mm; }
+  .cover h1 { font-size: 58pt; letter-spacing: -0.02em; }
+  .cover .sub { font-family: 'Roboto Slab', serif; font-size: 23pt; line-height: 1.2; margin-top: 7mm; max-width: 135mm; color: var(--on-ink); font-weight: 400; }
+  .cover .sub em { font-style: normal; color: var(--accent); font-weight: 700; }
+  .cover svg.steps { position: absolute; right: -8mm; bottom: 34mm; width: 120mm; opacity: 0.95; }
+  .cover .by { margin-top: auto; font-size: 11pt; color: var(--on-ink-muted); }
+  .cover .by b { color: var(--on-ink); display: block; font-size: 13pt; font-family: 'Roboto Slab', serif; }
+
+  /* Intro */
+  .intro h2 { font-size: 27pt; max-width: 150mm; margin-bottom: 8mm; }
+  .lede { font-size: 13.5pt; line-height: 1.5; color: var(--text); font-weight: 500; }
+  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 9mm; margin-top: 7mm; }
+  .callout { background: var(--ink); color: var(--on-ink); border-radius: 4mm; padding: 8mm 9mm; margin-top: 8mm; border-left: 2.2mm solid var(--accent); }
+  .callout h3 { font-size: 15pt; margin-bottom: 2.5mm; color: var(--accent); }
+  .callout p { margin: 0; color: var(--on-ink); }
+  .list5 { margin: 7mm 0 0; padding: 0; list-style: none; display: grid; gap: 2.4mm; }
+  .list5 li { display: flex; gap: 4mm; align-items: baseline; padding-bottom: 2.4mm; border-bottom: 0.3mm solid var(--line); font-family: 'Roboto Slab', serif; font-weight: 700; font-size: 12.5pt; }
+  .list5 li span { color: var(--teal); font-variant-numeric: tabular-nums; }
+
+  /* Technique pages */
+  .tech .num { font-family: 'Roboto Slab', serif; font-weight: 800; font-size: 76pt; line-height: 0.9; color: var(--accent); -webkit-text-stroke: 0; }
+  .tech .head { display: grid; grid-template-columns: auto 1fr; gap: 8mm; align-items: end; margin-bottom: 9mm; padding-bottom: 7mm; border-bottom: 0.6mm solid var(--ink); }
+  .tech h2 { font-size: 29pt; }
+  .tech .tag { font-size: 8.5pt; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--teal); margin-bottom: 2.5mm; }
+  .block { margin-bottom: 7mm; }
+  .block h3 { font-size: 10pt; font-family: 'Roboto', sans-serif; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 2.2mm; }
+  .steps-list { margin: 0; padding: 0; list-style: none; counter-reset: s; display: grid; gap: 3mm; }
+  .steps-list li { counter-increment: s; display: grid; grid-template-columns: 9mm 1fr; gap: 3.5mm; align-items: start; }
+  .steps-list li::before { content: counter(s); width: 8mm; height: 8mm; border-radius: 50%; background: var(--ink); color: var(--on-ink); font-family: 'Roboto Slab', serif; font-weight: 700; font-size: 10pt; display: grid; place-items: center; margin-top: 0.4mm; }
+  .steps-list b { font-family: 'Roboto Slab', serif; }
+  .tonight { background: var(--teal-soft); border-radius: 4mm; padding: 6.5mm 8mm; display: grid; grid-template-columns: auto 1fr; gap: 5mm; align-items: center; position: absolute; left: 22mm; right: 22mm; bottom: 27mm; }
+  .tonight .badge { font-family: 'Roboto Slab', serif; font-weight: 800; font-size: 11pt; background: var(--teal); color: #fff; border-radius: 99mm; padding: 2mm 5mm; white-space: nowrap; }
+  .tonight p { margin: 0; font-weight: 500; }
+  .why { border-left: 1.2mm solid var(--accent); padding-left: 5mm; }
+
+  /* Final pages */
+  .two { display: grid; grid-template-columns: 1fr 1fr; gap: 7mm; }
+  .card { background: #fff; border: 0.3mm solid var(--line); border-radius: 4mm; padding: 7mm; }
+  .card h3 { font-size: 14pt; margin-bottom: 3mm; }
+  .card.good { border-top: 1.6mm solid var(--teal); }
+  .card.bad { border-top: 1.6mm solid #b3402e; }
+  .card ul { margin: 0; padding-left: 5mm; }
+  .card li { margin-bottom: 2mm; }
+  .check { list-style: none; margin: 0; padding: 0; display: grid; gap: 3.4mm; }
+  .check li { display: grid; grid-template-columns: 7mm 1fr; gap: 4mm; align-items: start; }
+  .check li::before { content: ''; width: 6mm; height: 6mm; border: 0.5mm solid var(--ink); border-radius: 1.2mm; margin-top: 0.6mm; background: #fff; }
+  .back .courses { display: grid; grid-template-columns: 1fr 1fr; gap: 6mm; margin-top: 12mm; }
+  .back .course { background: var(--ink-2); border: 0.3mm solid var(--ink-3); border-radius: 4mm; padding: 7mm; }
+  .back .course h3 { font-size: 17pt; color: var(--accent); margin-bottom: 2.5mm; }
+  .back .course p { margin: 0; font-size: 11pt; color: var(--on-ink); }
+  .back .soon { margin-top: 8mm; font-weight: 500; font-size: 12pt; color: var(--on-ink); }
+  .back .author { margin-top: 12mm; padding-top: 8mm; border-top: 0.3mm solid var(--ink-3); max-width: 140mm; }
+  .back .author h3 { font-size: 13pt; margin-bottom: 2.5mm; }
+  .back .author p { color: var(--on-ink-muted); font-size: 10.5pt; }
+  .rule { font-family: 'Roboto Slab', serif; font-weight: 700; font-size: 17pt; line-height: 1.25; margin: 8mm 0 0; padding: 6mm 0; border-top: 0.6mm solid var(--ink); border-bottom: 0.6mm solid var(--ink); }
+  .rule span { color: var(--teal); }
+</style>
+</head>
+<body>
+
+<!-- 1 · Cover -->
+<section class="page cover">
+  <div class="brand">
+    <svg viewBox="0 0 40 40" width="38" height="38"><rect width="40" height="40" rx="10" fill="#ffb703"/><path d="M8 30h7v-6h7v-6h7v-6h4" fill="none" stroke="#0d1b2a" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="33" cy="12" r="2.6" fill="#0d1b2a"/></svg>
+    <span>Learning<b>ForSuccess</b></span>
+  </div>
+  <p class="eyebrow">A free guide</p>
+  <h1>Quick Wins</h1>
+  <p class="sub">Five study techniques <em>AI can’t do for you</em></p>
+  <svg class="steps" viewBox="0 0 520 400" aria-hidden="true">
+    <path d="M40 360h110v-80h110v-80h110v-80h110V360z" fill="#ffb703" opacity="0.1"/>
+    <path d="M40 360h110v-80h110v-80h110v-80h110" fill="none" stroke="#ffb703" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+    <g fill="#f6f1e7"><circle cx="95" cy="360" r="8"/><circle cx="205" cy="280" r="8"/><circle cx="315" cy="200" r="8"/></g>
+    <circle cx="480" cy="120" r="18" fill="#ffb703"/>
+  </svg>
+  <p class="by"><b>Simon Horsey</b>Teacher and author of <i>Practice Makes Perfect</i></p>
+</section>
+
+<!-- 2 · Why this matters -->
+<section class="page intro">
+  <p class="eyebrow">Why this matters now</p>
+  <h2>An answer you are handed is not an answer you have learned.</h2>
+  <p class="lede">AI is amazing. Ask it anything and a clear answer arrives in seconds. That is exactly why knowing how to learn matters more than ever.</p>
+  <div class="cols">
+    <div>
+      <p>To check whether what you are told is right, you need knowledge of your own to compare it with. To think critically, you need something in your head to think <em>with</em>. To be creative, you need ideas you actually own, ready to be joined in new ways.</p>
+      <p>None of that can be served up. It has to be built.</p>
+    </div>
+    <div>
+      <p>And building it takes effort. Teachers call it <strong>productive struggle</strong>: the slightly uncomfortable feeling of trying to remember, explain or work something out for yourself. That feeling is not a sign that you are failing. It is the feeling of learning.</p>
+      <p>In the exam hall there is no assistant. There is only what you know.</p>
+    </div>
+  </div>
+  <div class="callout">
+    <h3>The one idea behind all five</h3>
+    <p>Each technique in this guide makes <strong>your</strong> brain do the work. It is called active recall: pulling information back out of your memory, not just putting it in front of your eyes. It takes a little more effort. It is worth it.</p>
+  </div>
+  <ol class="list5">
+    <li><span>01</span> Put the highlighter down</li>
+    <li><span>02</span> Read. Close. Write.</li>
+    <li><span>03</span> Take one chapter through SQ3R</li>
+    <li><span>04</span> Set a 25-minute timer</li>
+    <li><span>05</span> Sit a past paper for real</li>
+  </ol>
+  <div class="footer"><span><b>Quick Wins</b> · LearningForSuccess</span><span>2</span></div>
+</section>
+
+<!-- 3 · Technique 1 -->
+<section class="page tech">
+  <div class="head"><div class="num">01</div><div><p class="tag">Quick win</p><h2>Put the highlighter down</h2></div></div>
+  <div class="block">
+    <h3>The problem</h3>
+    <p>Highlighting feels like work. But if you have highlighted nearly everything, you have highlighted nothing. Worse, your brain can decide it <em>knows</em> something simply because you took the action of colouring it in.</p>
+  </div>
+  <div class="block">
+    <h3>Do this</h3>
+    <ol class="steps-list">
+      <li><div><b>Save the highlighter for the odd word.</b> A term you keep forgetting, a date, a formula. Nothing more.</div></li>
+      <li><div><b>Write a question in the margin.</b> Each time a section matters, turn it into a question: <em>Why did this happen? How does this work?</em></div></li>
+      <li><div><b>Cover the text and answer it.</b> Later, use your margin questions to test yourself with the page hidden.</div></li>
+    </ol>
+  </div>
+  <div class="block why">
+    <h3>Why it works</h3>
+    <p>A highlighted line asks nothing of you. A question does. Answering it from memory is the effort that makes the knowledge stick.</p>
+  </div>
+  <div class="tonight"><span class="badge">Try it tonight</span><p>Take one page of notes. Write three questions in the margin, cover the page and answer them out loud.</p></div>
+  <div class="footer"><span><b>Quick Wins</b> · LearningForSuccess</span><span>3</span></div>
+</section>
+
+<!-- 4 · Technique 2 -->
+<section class="page tech">
+  <div class="head"><div class="num">02</div><div><p class="tag">Quick win</p><h2>Read. Close. Write.</h2></div></div>
+  <div class="block">
+    <h3>The problem</h3>
+    <p>Reading a chapter through and thinking you have learned it will not cut it. The words feel familiar while the book is open. Close it and most of them are gone.</p>
+  </div>
+  <div class="block">
+    <h3>Do this</h3>
+    <ol class="steps-list">
+      <li><div><b>Read</b> one section. Not the whole chapter: one section.</div></li>
+      <li><div><b>Close</b> the book. Properly closed, not face down and peeking.</div></li>
+      <li><div><b>Write</b> a short summary in your own words. Then open the book and see what you missed.</div></li>
+    </ol>
+    <p style="margin-top: 5mm">Stuck for what to write? Ask four questions: <strong>What? Why? When? How?</strong> It works for videos too: watch, stop, write.</p>
+  </div>
+  <div class="block why">
+    <h3>Why it works</h3>
+    <p>Summarising forces you to recall and to choose what matters. Both are thinking. Rereading is neither.</p>
+  </div>
+  <div class="tonight"><span class="badge">Try it tonight</span><p>Pick the last thing you studied in any subject. Give yourself one minute to write a summary without looking.</p></div>
+  <div class="footer"><span><b>Quick Wins</b> · LearningForSuccess</span><span>4</span></div>
+</section>
+
+<!-- 5 · Technique 3 -->
+<section class="page tech">
+  <div class="head"><div class="num">03</div><div><p class="tag">Quick win</p><h2>Take one chapter through SQ3R</h2></div></div>
+  <div class="block">
+    <h3>The problem</h3>
+    <p>You open the textbook at the first line and read to the last, with no idea what you are looking for. So nothing in particular stays.</p>
+  </div>
+  <div class="block">
+    <h3>Do this</h3>
+    <ol class="steps-list">
+      <li><div><b>Survey.</b> Skim the headings, diagrams, key words and call-out boxes. Get the view from 5,000 metres.</div></li>
+      <li><div><b>Question.</b> What do you already know? What do you need to find out? Write your questions down.</div></li>
+      <li><div><b>Read.</b> Go section by section, about 20 minutes at a time, hunting for the answers.</div></li>
+      <li><div><b>Recite.</b> Look away and say the key points in your own words. Reread only what would not come back.</div></li>
+      <li><div><b>Review.</b> At the end, go over the whole chapter and how its ideas connect. Explain it to someone if you can.</div></li>
+    </ol>
+  </div>
+  <div class="block why">
+    <h3>Why it works</h3>
+    <p>Questions give your reading a purpose, and reciting is active recall again. It may feel slow at first. It saves time later.</p>
+  </div>
+  <div class="tonight"><span class="badge">Try it tonight</span><p>Find a chapter you have struggled with. Spend 40 minutes taking it through all five steps.</p></div>
+  <div class="footer"><span><b>Quick Wins</b> · LearningForSuccess</span><span>5</span></div>
+</section>
+
+<!-- 6 · Technique 4 -->
+<section class="page tech">
+  <div class="head"><div class="num">04</div><div><p class="tag">Quick win</p><h2>Set a 25-minute timer</h2></div></div>
+  <div class="block">
+    <h3>The problem</h3>
+    <p>The job feels too big, so you put it off. Or you sit for two hours with your phone beside you and get twenty minutes of real work done.</p>
+  </div>
+  <div class="block">
+    <h3>Do this</h3>
+    <ol class="steps-list">
+      <li><div><b>Clear the desk.</b> Notifications off. Phone in another room if you can.</div></li>
+      <li><div><b>Set a simple timer for 25 minutes.</b> A kitchen timer or your phone’s clock. No special app needed.</div></li>
+      <li><div><b>Work on one thing</b> until it rings. One subject, one task.</div></li>
+      <li><div><b>Take a 5-minute break</b> and move: walk, stretch, get outside. After four rounds, take 15 to 30 minutes.</div></li>
+    </ol>
+    <p style="margin-top: 5mm">Cannot face 25? Promise yourself <strong>five minutes</strong>. Starting is the hard part, and you can carry on if you feel like it.</p>
+  </div>
+  <div class="block why">
+    <h3>Why it works</h3>
+    <p>Short, focused bursts beat long, distracted sessions. And consistency matters more than motivation: you will not always feel like revising, but a timer gets you going anyway.</p>
+  </div>
+  <div class="tonight"><span class="badge">Try it tonight</span><p>One 25-minute round on the subject you have been avoiding. Tick it off on a calendar and start a streak.</p></div>
+  <div class="footer"><span><b>Quick Wins</b> · LearningForSuccess</span><span>6</span></div>
+</section>
+
+<!-- 7 · Technique 5 -->
+<section class="page tech">
+  <div class="head"><div class="num">05</div><div><p class="tag">Quick win</p><h2>Sit a past paper for real</h2></div></div>
+  <div class="block">
+    <h3>The problem</h3>
+    <p>The hardest thing to know is what you do not know. Revising your favourite topics again feels good and tells you nothing.</p>
+  </div>
+  <div class="block">
+    <h3>Do this</h3>
+    <ol class="steps-list">
+      <li><div><b>Sit the paper under exam conditions.</b> Timed, silent, no notes.</div></li>
+      <li><div><b>Do not look at it beforehand,</b> and do not peek at the mark scheme. You would only be cheating yourself out of finding the gaps.</div></li>
+      <li><div><b>Mark it with the mark scheme.</b> Notice how model answers are worded and what earns the marks.</div></li>
+      <li><div><b>Go back to every wrong answer.</b> Review that topic in your notes, and ask your teacher if you cannot see why you went wrong.</div></li>
+    </ol>
+  </div>
+  <div class="block why">
+    <h3>Why it works</h3>
+    <p>Practice makes permanent. A low score on a practice paper is not a low score in the final. It is a map showing exactly where your revision should go next.</p>
+  </div>
+  <div class="tonight"><span class="badge">Try it this week</span><p>Ask a teacher for one past paper and its mark scheme. Book the time in your calendar now.</p></div>
+  <div class="footer"><span><b>Quick Wins</b> · LearningForSuccess</span><span>7</span></div>
+</section>
+
+<!-- 8 · Where AI fits + first week + next step -->
+<section class="page">
+  <p class="eyebrow">Where AI fits</p>
+  <h2 style="font-size: 24pt; margin-bottom: 6mm">Struggle first. Then check.</h2>
+  <div class="two">
+    <div class="card good">
+      <h3>Use it after you have tried</h3>
+      <ul>
+        <li>Ask it to quiz you on a topic you have just summarised</li>
+        <li>Ask it to explain the one point you could not recall</li>
+        <li>Ask it to check your answer and show what is missing</li>
+      </ul>
+    </div>
+    <div class="card bad">
+      <h3>Do not let it do the learning</h3>
+      <ul>
+        <li>Writing your summary for you: the writing is the learning</li>
+        <li>Giving you the answer before you have had a go</li>
+        <li>Being trusted without a second look: compare it with what you know</li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="eyebrow" style="margin-top: 9mm">Your first week</p>
+  <ul class="check">
+    <li><div><strong>Day 1.</strong> Write three margin questions on one page of notes and answer them with the page covered.</div></li>
+    <li><div><strong>Day 2.</strong> Read, close, write on one section of a textbook.</div></li>
+    <li><div><strong>Day 3.</strong> Take one difficult chapter through SQ3R.</div></li>
+    <li><div><strong>Day 4.</strong> Do two 25-minute rounds on the subject you have been avoiding.</div></li>
+    <li><div><strong>Day 5.</strong> Sit one past paper under exam conditions, then mark it.</div></li>
+  </ul>
+
+  <p class="rule">The effort is not the obstacle to learning. <span>The effort is the learning.</span></p>
+  <div class="footer"><span><b>Quick Wins</b> · LearningForSuccess</span><span>8</span></div>
+</section>
+
+<!-- 9 · Next step -->
+<section class="page cover back">
+  <p class="eyebrow" style="margin-top: 8mm">Your next step</p>
+  <h2 style="font-size: 34pt; max-width: 150mm">Ready for the full method?</h2>
+  <p class="sub" style="font-size: 15pt; margin-top: 6mm; color: var(--on-ink-muted)">These five quick wins are a start. The courses take you the rest of the way, one technique at a time.</p>
+  <div class="courses">
+    <div class="course"><h3>GradeBoost</h3><p>The complete study skills course. Seven units covering notes, reading, study guides, memory, time management and looking after your brain. Take one unit a week.</p></div>
+    <div class="course"><h3>ExamX Revision</h3><p>For the run-up to exams. Prioritise your subjects, build a plan that survives real life, and revise with the techniques that make knowledge stick.</p></div>
+  </div>
+  <p class="soon">Both courses are opening soon. As a reader of this guide, you will be among the first to hear.</p>
+  <div class="author">
+    <h3>About Simon</h3>
+    <p>Simon Horsey is a teacher and Head of Arts and Technology at a British international school. He is the author of <i>Practice Makes Perfect: The Keys to Success on Any Musical Instrument</i>, a book about how to practise well. Essentials for Learning brings that same thinking to every subject.</p>
+  </div>
+  <p class="by" style="font-family: 'Roboto Slab', serif; font-weight: 700; font-size: 14pt; color: var(--on-ink)">www.learning-for-success.com</p>
+</section>
+
+</body>
+</html>
