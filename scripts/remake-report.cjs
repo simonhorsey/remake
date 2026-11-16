@@ -66,7 +66,6 @@ function listPages() {
   if (!fs.existsSync(path.join(DIST, 'index.html'))) { console.error('No build found. Run: npm run build'); process.exit(2); }
   const { site } = await import(require('url').pathToFileURL(path.join(ROOT, 'src', 'content', 'site.js')).href);
   SITE_HOST = new URL(site.url).host;
-  const BARE_HOST = SITE_HOST.replace(/^www\./, '');
   const server = await serve();
   const base = `http://127.0.0.1:${server.address().port}`;
   const browser = await chromium.launch(process.env.CHROME_PATH ? { executablePath: process.env.CHROME_PATH } : {});
@@ -348,8 +347,6 @@ function listPages() {
     check(G, 'Pure static build in dist/ with index.html and 404.html', fs.existsSync(path.join(DIST, 'index.html')) && fs.existsSync(path.join(DIST, '404.html')));
     const headers = fs.existsSync(path.join(DIST, '_headers')) ? fs.readFileSync(path.join(DIST, '_headers'), 'utf8') : '';
     check(G, '_headers sets security headers and long-term caching for assets', /X-Content-Type-Options/.test(headers) && /immutable/.test(headers));
-    const redirects = fs.existsSync(path.join(DIST, '_redirects')) ? fs.readFileSync(path.join(DIST, '_redirects'), 'utf8') : '';
-    check(G, '_redirects sends the bare domain to www', redirects.includes(`https://${BARE_HOST}/*`) && redirects.includes(`https://${SITE_HOST}/:splat`));
     const wr = fs.existsSync(path.join(ROOT, 'wrangler.jsonc')) ? fs.readFileSync(path.join(ROOT, 'wrangler.jsonc'), 'utf8') : '';
     check(G, 'wrangler.jsonc points at dist/ so `npm run deploy` works', /"directory":\s*"\.\/dist"/.test(wr));
     check(G, 'Nothing loaded from other servers (fonts are self-hosted)', issues.thirdParty.length === 0, list(issues.thirdParty));

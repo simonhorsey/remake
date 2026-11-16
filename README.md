@@ -39,15 +39,30 @@ passes. It needs Playwright (`npm i -D playwright && npx playwright install chro
 
 ## Put it on Cloudflare
 
-Either connect this repository in the Cloudflare dashboard (build command
-`npm run build`, output directory `dist`), or deploy from your machine:
+1. In the Cloudflare dashboard, create a Pages project from this repository:
+   build command `npm run build`, output directory `dist`.
+2. Connect the domain. It is registered through Sitejet, so pick one route:
 
-```bash
-npm run deploy
-```
+   **A. Move the domain's DNS to Cloudflare (recommended).** Add
+   `learning-for-success.com` as a site in Cloudflare, copy across any existing
+   DNS records (especially MX records if you use email on the domain), then
+   either transfer the domain away from Sitejet (Domain Manager → Transfer gives
+   you the auth code) or point its nameservers at Cloudflare. Add both
+   `www.learning-for-success.com` and `learning-for-success.com` as custom
+   domains on the Pages project, then create a Bulk Redirect in Cloudflare from
+   the bare domain to `https://www.learning-for-success.com`.
 
-Then add `www.learning-for-success.com` as a custom domain. `public/_redirects`
-already sends the bare domain to `www`.
+   **B. Leave DNS at Sitejet.** Add `www.learning-for-success.com` as a custom
+   domain on the Pages project first, then create a CNAME record for `www` at
+   Sitejet pointing to `<your-project>.pages.dev`. Only `www` works this way;
+   the bare domain cannot point at Cloudflare without route A.
+
+Either way the current Sitejet site stops being served at that address once DNS
+changes. The bare-domain redirect is a Cloudflare dashboard setting: a
+`_redirects` file cannot do it.
+
+`npm run deploy` is also available if you prefer to publish from your own
+machine with Wrangler.
 
 ## Where things are
 

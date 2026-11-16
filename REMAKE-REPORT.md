@@ -1,10 +1,10 @@
 # Remake report
 
-**REMAKE COMPLETE** — 43 of 43 checks passed.
+**REMAKE COMPLETE** — 42 of 42 checks passed.
 
 - Reference pattern: https://www.storybrand.com (home page), read 2026-11-16
 - Built site: 10 pages for https://www.learning-for-success.com
-- Generated: 2026-11-16 06:05 UTC by `npm run report`
+- Generated: 2026-11-16 06:06 UTC by `npm run report`
 
 This report is written by `scripts/remake-report.cjs`, which loads every built page in a real browser. The verdict covers the build. Content still waiting on the site owner is listed at the end and does not affect it.
 
@@ -84,7 +84,6 @@ This report is written by `scripts/remake-report.cjs`, which loads every built p
 |---|---|---|
 | ✅ | Pure static build in dist/ with index.html and 404.html |  |
 | ✅ | _headers sets security headers and long-term caching for assets |  |
-| ✅ | _redirects sends the bare domain to www |  |
 | ✅ | wrangler.jsonc points at dist/ so `npm run deploy` works |  |
 | ✅ | Nothing loaded from other servers (fonts are self-hosted) |  |
 

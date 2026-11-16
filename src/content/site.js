@@ -11,7 +11,7 @@ export const site = {
   draft: true,
   name: 'LearningForSuccess',
   programme: 'Essentials for Learning',
-  // The one place the web address is set. If it changes, also update public/_redirects.
+  // The one place the web address is set.
   url: 'https://www.learning-for-success.com',
   title: 'LearningForSuccess | Learn How to Learn. Watch Your Grades Follow.',
   description:
